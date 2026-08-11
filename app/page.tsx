@@ -41,7 +41,7 @@ const directions = [
     text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://cdn.pixabay.com/photo/2017/11/18/05/08/pilates-2959235_1280.jpg",
+    image: "https://images.pexels.com/photos/8614454/pexels-photo-8614454.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "06",
@@ -49,7 +49,7 @@ const directions = [
     text: "Мягкая растяжка в гамаках с динамическими, статическими и перевёрнутыми положениями.",
     duration: "60 минут",
     group: "Мини-группа до 4",
-    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1100&q=85",
+    image: "https://images.pexels.com/photos/4999398/pexels-photo-4999398.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "07",
@@ -81,7 +81,7 @@ const directions = [
     text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.pexels.com/photos/6944817/pexels-photo-6944817.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/7597258/pexels-photo-7597258.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "11",
@@ -203,7 +203,7 @@ export default function Home() {
           <article><span className="price-kicker">60 минут</span><h3>Йога-массаж</h3><strong>2 000 <small>₽</small></strong><p>Растяжка, мягкое снятие зажимов и глубокое расслабление.</p></article>
         </div>
 
-        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы со скидкой</h3></div><p>Эти варианты подготовлены для демонстрации сайта и требуют подтверждения студией перед реальным запуском.</p></div>
+        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы со скидкой</h3></div></div>
         <div className="membership-grid">
           <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p></article>
           <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p></article>
