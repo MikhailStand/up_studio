@@ -7,57 +7,97 @@ const directions = [
     number: "01",
     title: "Хатха-йога",
     text: "Спокойная, внимательная практика: укрепляем тело, раскрываем дыхание и возвращаем внутреннюю опору.",
-    meta: "Для любого уровня",
+    duration: "60 минут",
+    group: "Группа до 8",
     image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "02",
     title: "Йогатерапия",
     text: "Практика для женского здоровья по методу Birthlight Well Woman Yoga — мягко и с вниманием к состоянию.",
-    meta: "Мягкая нагрузка",
+    duration: "60 минут",
+    group: "Группа до 8",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "03",
     title: "Аэройога",
     text: "Практика в мини-группе до четырёх человек: гамак, баланс, координация и бережное вытяжение позвоночника.",
-    meta: "Мини-группа до 4",
+    duration: "60 минут",
+    group: "Мини-группа до 4",
     image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "04",
     title: "Здоровая спина",
     text: "Программа для укрепления мышц спины, оздоровления позвоночника и улучшения осанки.",
-    meta: "Спина и осанка",
+    duration: "60 минут",
+    group: "Группа до 8",
     image: "https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "05",
     title: "Пилатес",
     text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
-    meta: "60 минут",
+    duration: "60 минут",
+    group: "Группа до 8",
     image: "https://images.unsplash.com/photo-1510894347712-4b347293e6d2?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "06",
     title: "Аэростретчинг",
     text: "Мягкая растяжка в гамаках с динамическими, статическими и перевёрнутыми положениями.",
-    meta: "Воздушная практика",
+    duration: "60 минут",
+    group: "Мини-группа до 4",
     image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "07",
     title: "Кундалини-йога",
     text: "Йога осознания, объединяющая движение, дыхание, внимание и медитативную практику.",
-    meta: "Йога осознания",
+    duration: "60 минут",
+    group: "Группа до 8",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "08",
     title: "Фитнес + растяжка",
     text: "Динамическая тренировка в мини-группе: укрепление мышц всего тела и работа над гибкостью.",
-    meta: "Мини-группа 4–5",
+    duration: "60 минут",
+    group: "Мини-группа 4–5",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "09",
+    title: "Стретчинг",
+    text: "Мягкая работа над гибкостью и подвижностью суставов без резких движений и перегрузки.",
+    duration: "60 минут",
+    group: "Группа до 8",
+    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "10",
+    title: "Гвоздестояние",
+    text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
+    duration: "60 минут",
+    group: "Группа до 8",
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "11",
+    title: "Слушая тело",
+    text: "Танцевальная практика, в которой движение помогает лучше почувствовать тело и свободнее выражать себя.",
+    duration: "60 минут",
+    group: "Группа до 8",
+    image: "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "12",
+    title: "Растяжка в гамаках",
+    text: "Занятие для начинающих: гамак помогает безопасно развивать гибкость и снять напряжение со спины.",
+    duration: "60 минут",
+    group: "Мини-группа до 4",
+    image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=1100&q=85",
   },
 ];
 
@@ -121,26 +161,24 @@ export default function Home() {
                 <span>{item.number}</span><span className="card-arrow">↗</span>
               </div>
               <div className="card-body">
-                <span className="pill">{item.meta}</span>
+                <div className="card-meta">
+                  <span className="pill">{item.duration}</span>
+                  <span className="pill">{item.group}</span>
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </div>
             </article>
           ))}
         </div>
-        <div className="more-practices">
-          <p>Также в студии</p>
-          <div><span>Гвоздестояние</span><span>Стретчинг</span><span>Танцевальная практика</span><span>Йога-массаж</span></div>
-        </div>
       </section>
 
       <section className="formats section" id="formats">
         <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
-          <article><span>01</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке.</p><strong>от 550 ₽</strong></article>
-          <article><span>02</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках в группе до четырёх человек.</p><strong>от 550 ₽</strong></article>
-          <article><span>03</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень.</p><strong>до 1 100 ₽</strong></article>
-          <article><span>04</span><h3>Массаж</h3><p>Йога-массаж и другие расслабляющие и восстановительные программы.</p><strong>от 2 000 ₽</strong></article>
+          <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке — до восьми участников.</p><strong>от 550 ₽</strong></article>
+          <article><span>02 · до 4 человек</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках — до четырёх участников. В фитнес-группе может быть до пяти.</p><strong>от 550 ₽</strong></article>
+          <article><span>03 · один на один</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень подготовки.</p><strong>до 1 100 ₽</strong></article>
         </div>
       </section>
 
