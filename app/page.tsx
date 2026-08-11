@@ -233,8 +233,8 @@ export default function Home() {
         </div>
         <div className="price-strip">
           <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong></article>
-          <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><strong>до 1 100 <small>₽</small></strong><p>Точная стоимость зависит от выбранного направления.</p></article>
-          <article><span className="price-kicker">Помощь с выбором</span><h3>Уточнить направление</h3><strong className="phone-price">по телефону</strong><p>Администратор подскажет подходящий формат и наличие места.</p></article>
+          <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><p>Точная стоимость зависит от выбранного направления.</p><strong>до 1 100 <small>₽</small></strong></article>
+          <article className="price-help"><span className="price-kicker">Помощь с выбором</span><h3>Уточнить направление</h3><p>Администратор подскажет подходящий формат и наличие места.</p><a className="price-phone-link" href="tel:+79309098882">Позвонить администратору <span>↗</span></a></article>
         </div>
       </section>
 
@@ -270,9 +270,9 @@ export default function Home() {
           <div className="price-source"><span>Цена зависит от времени</span><p>Выберите продолжительность сеанса, а подходящий вид массажа уточните у администратора.</p></div>
         </div>
         <div className="price-strip massage-price-strip">
-          <article><span className="price-kicker">Короткий сеанс</span><h3>30 минут</h3><strong>от 1 200 <small>₽</small></strong><p>Для воротниковой зоны, спины или стоп.</p></article>
+          <article><span className="price-kicker">Короткий сеанс</span><h3>30 минут</h3><p>Для воротниковой зоны, спины или стоп.</p><strong>от 1 200 <small>₽</small></strong></article>
           <article className="price-main"><div><span className="price-kicker">Основной формат</span><h3>60 минут</h3><p>Общий спортивный, relax-массаж и другие программы.</p></div><strong>от 2 000 <small>₽</small></strong></article>
-          <article><span className="price-kicker">Глубокое расслабление</span><h3>90 минут</h3><strong>от 2 800 <small>₽</small></strong><p>Продолжительный сеанс, включая тайский массаж.</p></article>
+          <article><span className="price-kicker">Глубокое расслабление</span><h3>90 минут</h3><p>Продолжительный сеанс, включая тайский массаж.</p><strong>от 2 800 <small>₽</small></strong></article>
         </div>
 
         <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы на месяц</h3></div></div>
