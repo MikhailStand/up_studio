@@ -104,13 +104,6 @@ export default function Home() {
         <div className="hero-info"><span>Дворцовый проезд, 8/14</span><span>Ежедневно · 07:00—22:00</span></div>
       </section>
 
-      <section className="quick-links" aria-label="Быстрая навигация">
-        <a href="#directions"><span>01</span><div><strong>Найти занятие</strong><small>Йога, пилатес, гамаки и фитнес</small></div><i>→</i></a>
-        <a href="#formats"><span>02</span><div><strong>Выбрать формат</strong><small>В группе, персонально или массаж</small></div><i>→</i></a>
-        <a href="#prices"><span>03</span><div><strong>Посмотреть цены</strong><small>Разовые занятия и абонементы</small></div><i>→</i></a>
-        <a href="#offers"><span>04</span><div><strong>Специальные предложения</strong><small>Скидки и подарочный сертификат</small></div><i>→</i></a>
-      </section>
-
       <section className="directions section" id="directions">
         <div className="section-heading">
           <p className="section-label">[ 01 — ЗАНЯТИЯ ]</p>
@@ -131,7 +124,6 @@ export default function Home() {
                 <span className="pill">{item.meta}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-                <a href="#booking">Узнать подробнее <span>→</span></a>
               </div>
             </article>
           ))}
@@ -145,10 +137,10 @@ export default function Home() {
       <section className="formats section" id="formats">
         <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
-          <article><span>01</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке.</p><strong>от 550 ₽</strong><a href="#prices">Смотреть стоимость →</a></article>
-          <article><span>02</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках в группе до четырёх человек.</p><strong>от 550 ₽</strong><a href="#directions">Выбрать направление →</a></article>
-          <article><span>03</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень.</p><strong>до 1 100 ₽</strong><a href="#booking">Оставить заявку →</a></article>
-          <article><span>04</span><h3>Массаж</h3><p>Йога-массаж и другие расслабляющие и восстановительные программы.</p><strong>от 2 000 ₽</strong><a href="#booking">Записаться →</a></article>
+          <article><span>01</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке.</p><strong>от 550 ₽</strong></article>
+          <article><span>02</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках в группе до четырёх человек.</p><strong>от 550 ₽</strong></article>
+          <article><span>03</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень.</p><strong>до 1 100 ₽</strong></article>
+          <article><span>04</span><h3>Массаж</h3><p>Йога-массаж и другие расслабляющие и восстановительные программы.</p><strong>от 2 000 ₽</strong></article>
         </div>
       </section>
 
@@ -159,27 +151,25 @@ export default function Home() {
           <h2>Студия для начинающих<br />и опытных учеников</h2>
           <p className="story-lead">В «Вдохновении в пути» можно заниматься йогой, пилатесом, фитнесом и растяжкой, попробовать практики в гамаках или записаться на массаж.</p>
           <p>Если вы не знаете, что выбрать, администратор поможет подобрать занятие по цели, уровню подготовки и удобному формату.</p>
-          <div className="story-features"><span>Мини-группы</span><span>Личный тренер</span><span>Йога для беременных</span><span>Массаж</span><span>Парковка</span><span>Wi-Fi</span></div>
-          <a href="#booking">Помогите выбрать занятие <span>↗</span></a>
         </div>
       </section>
 
       <section className="prices section" id="prices">
         <div className="price-heading">
           <div><p className="section-label">[ 04 — ЦЕНЫ ]</p><h2>Сколько стоят<br /><em>занятия</em></h2></div>
-          <div className="price-source"><span>Актуально по карточке студии</span><p>Все групповые направления в опубликованном прайсе имеют единую стоимость. Перед визитом рекомендуем уточнить наличие места.</p></div>
+          <div className="price-source"><span>Единая цена групповых занятий</span><p>Йога, пилатес, фитнес, растяжка и занятия в гамаках стоят 550 ₽ за одно посещение.</p></div>
         </div>
         <div className="price-strip">
-          <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong><a href="#booking">Выбрать практику ↗</a></article>
+          <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong></article>
           <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><strong>до 1 100 <small>₽</small></strong><p>Точная стоимость зависит от выбранного направления.</p></article>
           <article><span className="price-kicker">60 минут</span><h3>Йога-массаж</h3><strong>2 000 <small>₽</small></strong><p>Растяжка, мягкое снятие зажимов и глубокое расслабление.</p></article>
         </div>
 
         <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы со скидкой</h3></div><p>Эти варианты подготовлены для демонстрации сайта и требуют подтверждения студией перед реальным запуском.</p></div>
         <div className="membership-grid">
-          <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p><a href="#booking">Выбрать</a></article>
-          <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p><a href="#booking">Выбрать</a></article>
-          <article><div className="discount">−15%</div><span>Погружение</span><h3>12 занятий</h3><strong>5 610 ₽</strong><s>6 600 ₽</s><p>Для регулярной практики</p><a href="#booking">Выбрать</a></article>
+          <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p></article>
+          <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p></article>
+          <article><div className="discount">−15%</div><span>Погружение</span><h3>12 занятий</h3><strong>5 610 ₽</strong><s>6 600 ₽</s><p>Для регулярной практики</p></article>
         </div>
         <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="#booking">Хочу подарить <span>↗</span></a></div>
       </section>
