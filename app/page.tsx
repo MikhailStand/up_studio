@@ -171,7 +171,7 @@ export default function Home() {
           <a href="#about">О студии</a>
           <a href="#contacts">Контакты</a>
         </nav>
-        <a className="nav-button" href="tel:+79309098882">Позвонить <span>↗</span></a>
+        <a className="nav-button" href="tel:+79309098882">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a>
       </header>
 
       <section className="hero" id="top">
@@ -190,7 +190,6 @@ export default function Home() {
 
       <section className="directions section" id="directions">
         <div className="section-heading">
-          <p className="section-label">[ 01 — ЗАНЯТИЯ ]</p>
           <h2>Какие занятия<br /><em>есть в студии</em></h2>
           <p>Листайте карточки, сравнивайте направления и выбирайте подходящую нагрузку.</p>
         </div>
@@ -202,7 +201,7 @@ export default function Home() {
           {directions.map((item) => (
             <article className="direction-card" key={item.title}>
               <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
-                <span>{item.number}</span><span className="card-arrow">↗</span>
+                <span>{item.number}</span>
               </div>
               <div className="card-body">
                 <div className="card-meta">
@@ -218,7 +217,7 @@ export default function Home() {
       </section>
 
       <section className="formats section" id="formats">
-        <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
+        <div className="format-heading"><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
           <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
           <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
@@ -228,19 +227,18 @@ export default function Home() {
 
       <section className="prices section" id="prices">
         <div className="price-heading">
-          <div><p className="section-label">[ 03 — ЦЕНЫ ЗАНЯТИЙ ]</p><h2>Сколько стоят<br /><em>занятия</em></h2></div>
+          <div><h2>Сколько стоят<br /><em>занятия</em></h2></div>
           <div className="price-source"><span>Единая цена групповых занятий</span><p>Йога, пилатес, фитнес, растяжка и занятия в гамаках стоят 550 ₽ за одно посещение.</p></div>
         </div>
         <div className="price-strip">
           <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong></article>
           <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><p>Точная стоимость зависит от выбранного направления.</p><strong>до 1 100 <small>₽</small></strong></article>
-          <article className="price-help"><span className="price-kicker">Помощь с выбором</span><h3>Уточнить направление</h3><p>Администратор подскажет подходящий формат и наличие места.</p><a className="price-phone-link" href="tel:+79309098882">Позвонить администратору <span>↗</span></a></article>
+          <article className="price-help"><span className="price-kicker">Помощь с выбором</span><h3>Уточнить направление</h3><p>Администратор подскажет подходящий формат и наличие места.</p><a className="price-phone-link" href="tel:+79309098882">Позвонить администратору <span className="link-arrow" aria-hidden="true">→</span></a></article>
         </div>
       </section>
 
       <section className="massages section" id="massages">
         <div className="section-heading">
-          <p className="section-label">[ 04 — МАССАЖ ]</p>
           <h2>Виды массажа<br /><em>в студии</em></h2>
           <p>Выберите подходящий формат восстановления и уточните удобное время у администратора.</p>
         </div>
@@ -252,7 +250,7 @@ export default function Home() {
           {massages.map((item) => (
             <article className="direction-card" key={item.title}>
               <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
-                <span>{item.number}</span><span className="card-arrow">↗</span>
+                <span>{item.number}</span>
               </div>
               <div className="card-body">
                 <div className="card-meta"><span className="pill">{item.duration}</span></div>
@@ -266,7 +264,7 @@ export default function Home() {
 
       <section className="prices massage-prices section" id="massage-prices">
         <div className="price-heading">
-          <div><p className="section-label">[ 05 — ЦЕНЫ МАССАЖА ]</p><h2>Стоимость<br /><em>массажа</em></h2></div>
+          <div><h2>Стоимость<br /><em>массажа</em></h2></div>
           <div className="price-source"><span>Цена зависит от времени</span><p>Выберите продолжительность сеанса, а подходящий вид массажа уточните у администратора.</p></div>
         </div>
         <div className="price-strip massage-price-strip">
@@ -281,13 +279,12 @@ export default function Home() {
           <article className="popular"><span>В ритме</span><h3>12 занятий</h3><strong>9 900 ₽</strong><p>825 ₽ за одно посещение</p></article>
           <article><span>Регулярная практика</span><h3>16 занятий</h3><strong>12 400 ₽</strong><p>775 ₽ за одно посещение</p></article>
         </div>
-        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="tel:+79309098882">Уточнить <span>↗</span></a></div>
+        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="tel:+79309098882">Уточнить <span className="link-arrow" aria-hidden="true">→</span></a></div>
       </section>
 
       <section className="studio-story" id="about">
         <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой" />
         <div className="story-copy">
-          <p className="section-label">[ 06 — О СТУДИИ ]</p>
           <h2>Студия для начинающих<br />и опытных учеников</h2>
           <p className="story-lead">В «Вдохновении в пути» можно заниматься йогой, пилатесом, фитнесом и растяжкой, попробовать практики в гамаках или записаться на массаж.</p>
           <p>Если вы не знаете, что выбрать, администратор поможет подобрать занятие по цели, уровню подготовки и удобному формату.</p>
@@ -301,7 +298,6 @@ export default function Home() {
 
       <section className="booking section" id="booking">
         <div className="booking-copy">
-          <p className="section-label light">[ ПЕРВОЕ ЗАНЯТИЕ ]</p>
           <h2>Ваш путь может<br />начаться <em>сегодня</em></h2>
           <p>Позвоните администратору — вам помогут выбрать подходящую практику, уточнят расписание и наличие места.</p>
         </div>
@@ -309,7 +305,7 @@ export default function Home() {
           <span>Администратор студии</span>
           <a href="tel:+79309098882">+7 930 909-88-82</a>
           <p>Ежедневно · 07:00—22:00</p>
-          <a className="call-button" href="tel:+79309098882">Позвонить администратору <span>↗</span></a>
+          <a className="call-button" href="tel:+79309098882">Позвонить администратору <span className="link-arrow" aria-hidden="true">→</span></a>
         </div>
       </section>
 
@@ -320,7 +316,7 @@ export default function Home() {
           <div className="footer-contacts">
             <p>Королёв<br />Дворцовый проезд, 8/14</p>
             <a href="tel:+79309098882">+7 930 909-88-82</a>
-            <a target="_blank" rel="noreferrer" href="https://yandex.ru/maps/org/vdokhnoveniye_v_puti/13801819850?si=h9gh1zbyxezk9ynxwa45vchxzm">Открыть на карте ↗</a>
+            <a target="_blank" rel="noreferrer" href="https://yandex.ru/maps/org/vdokhnoveniye_v_puti/13801819850?si=h9gh1zbyxezk9ynxwa45vchxzm">Открыть на карте <span className="link-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="footer-bottom"><span>© 2026 Вдохновение в пути</span><span>Демонстрационная версия сайта</span><a href="#top">Наверх ↑</a></div>
