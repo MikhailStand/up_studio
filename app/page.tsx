@@ -95,20 +95,27 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow"><span /> Студия йоги в Королёве</p>
-          <h1>Дышите.<br /><em>Чувствуйте.</em><br />Будьте собой.</h1>
+          <h1>Йога и движение<br /><em>для вашего тела</em></h1>
           <div className="hero-bottom">
-            <p>Пространство бережной практики, где можно замедлиться, услышать себя и вернуть телу лёгкость.</p>
-            <a className="circle-link" href="#booking" aria-label="Записаться на первое занятие">↘</a>
+            <p>Выберите подходящее занятие, узнайте стоимость и запишитесь в студию в Королёве.</p>
+            <a className="hero-primary" href="#directions">Выбрать занятие <span>↓</span></a>
           </div>
         </div>
         <div className="hero-info"><span>Дворцовый проезд, 8/14</span><span>Ежедневно · 07:00—22:00</span></div>
       </section>
 
+      <section className="quick-links" aria-label="Быстрая навигация">
+        <a href="#directions"><span>01</span><div><strong>Найти занятие</strong><small>Йога, пилатес, гамаки и фитнес</small></div><i>→</i></a>
+        <a href="#formats"><span>02</span><div><strong>Выбрать формат</strong><small>В группе, персонально или массаж</small></div><i>→</i></a>
+        <a href="#prices"><span>03</span><div><strong>Посмотреть цены</strong><small>Разовые занятия и абонементы</small></div><i>→</i></a>
+        <a href="#offers"><span>04</span><div><strong>Специальные предложения</strong><small>Скидки и подарочный сертификат</small></div><i>→</i></a>
+      </section>
+
       <section className="directions section" id="directions">
         <div className="section-heading">
-          <p className="section-label">[ 02 — НАПРАВЛЕНИЯ ]</p>
-          <h2>Выберите свою<br /><em>практику</em></h2>
-          <p>У каждого свой ритм и свой путь. Начните с того, что откликается именно вам.</p>
+          <p className="section-label">[ 01 — ЗАНЯТИЯ ]</p>
+          <h2>Какие занятия<br /><em>есть в студии</em></h2>
+          <p>Листайте карточки, сравнивайте направления и выбирайте подходящую нагрузку.</p>
         </div>
         <div className="rail-controls" aria-label="Управление каруселью">
           <span>Листайте, чтобы увидеть все направления</span>
@@ -135,24 +142,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="studio-story" id="about">
-        <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой">
-          <div className="story-rating"><strong>4,8</strong><span>рейтинг на Яндекс Картах<br />по 22 оценкам</span></div>
+      <section className="formats section" id="formats">
+        <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
+        <div className="format-grid">
+          <article><span>01</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке.</p><strong>от 550 ₽</strong><a href="#prices">Смотреть стоимость →</a></article>
+          <article><span>02</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках в группе до четырёх человек.</p><strong>от 550 ₽</strong><a href="#directions">Выбрать направление →</a></article>
+          <article><span>03</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень.</p><strong>до 1 100 ₽</strong><a href="#booking">Оставить заявку →</a></article>
+          <article><span>04</span><h3>Массаж</h3><p>Йога-массаж и другие расслабляющие и восстановительные программы.</p><strong>от 2 000 ₽</strong><a href="#booking">Записаться →</a></article>
         </div>
+      </section>
+
+      <section className="studio-story" id="about">
+        <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой" />
         <div className="story-copy">
-          <p className="section-label">[ О ПРОСТРАНСТВЕ ]</p>
-          <h2>Здесь можно быть<br /><em>в своём ритме</em></h2>
-          <p className="story-lead">«Вдохновение в пути» — уютная студия в Королёве, где в одном месте собраны йога, фитнес, практики в гамаках и массаж.</p>
-          <p>Можно прийти совсем без опыта: преподаватель поможет выбрать направление и спокойно познакомит с практикой. Группы камерные, поэтому внимания хватает каждому.</p>
+          <p className="section-label">[ 03 — О СТУДИИ ]</p>
+          <h2>Студия для начинающих<br />и опытных учеников</h2>
+          <p className="story-lead">В «Вдохновении в пути» можно заниматься йогой, пилатесом, фитнесом и растяжкой, попробовать практики в гамаках или записаться на массаж.</p>
+          <p>Если вы не знаете, что выбрать, администратор поможет подобрать занятие по цели, уровню подготовки и удобному формату.</p>
           <div className="story-features"><span>Мини-группы</span><span>Личный тренер</span><span>Йога для беременных</span><span>Массаж</span><span>Парковка</span><span>Wi-Fi</span></div>
-          <blockquote><span>“</span><p>Очень уютная студия с доброжелательной атмосферой. В одном месте можно заниматься йогой, фитнесом, тянуться в гамаке и прийти на массаж.</p></blockquote>
-          <a href="#booking">Познакомиться со студией <span>↗</span></a>
+          <a href="#booking">Помогите выбрать занятие <span>↗</span></a>
         </div>
       </section>
 
       <section className="prices section" id="prices">
         <div className="price-heading">
-          <div><p className="section-label">[ 03 — СТОИМОСТЬ ]</p><h2>Практика,<br /><em>доступная каждому</em></h2></div>
+          <div><p className="section-label">[ 04 — ЦЕНЫ ]</p><h2>Сколько стоят<br /><em>занятия</em></h2></div>
           <div className="price-source"><span>Актуально по карточке студии</span><p>Все групповые направления в опубликованном прайсе имеют единую стоимость. Перед визитом рекомендуем уточнить наличие места.</p></div>
         </div>
         <div className="price-strip">
@@ -161,7 +175,7 @@ export default function Home() {
           <article><span className="price-kicker">60 минут</span><h3>Йога-массаж</h3><strong>2 000 <small>₽</small></strong><p>Растяжка, мягкое снятие зажимов и глубокое расслабление.</p></article>
         </div>
 
-        <div className="membership-head"><div><span>Новая концепция</span><h3>Абонементы с выгодой</h3></div><p>Эти варианты подготовлены для демонстрации сайта и требуют подтверждения студией перед реальным запуском.</p></div>
+        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы со скидкой</h3></div><p>Эти варианты подготовлены для демонстрации сайта и требуют подтверждения студией перед реальным запуском.</p></div>
         <div className="membership-grid">
           <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p><a href="#booking">Выбрать</a></article>
           <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p><a href="#booking">Выбрать</a></article>
