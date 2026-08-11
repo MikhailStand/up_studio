@@ -200,7 +200,12 @@ export default function Home() {
           <h1>Йога и движение<br /><em>для вашего тела</em></h1>
           <div className="hero-bottom">
             <p>Выберите подходящее занятие, узнайте стоимость и запишитесь в студию в Королёве.</p>
-            <a className="hero-primary" href="#directions">Выбрать занятие <span>↓</span></a>
+            <nav className="hero-quick-links" aria-label="Быстрые переходы по сайту">
+              <a href="#directions">Занятия</a>
+              <a href="#massages">Массаж</a>
+              <a href="#offers">Абонементы</a>
+              <a href="#booking">Записаться</a>
+            </nav>
           </div>
         </div>
         <div className="hero-info"><span>Дворцовый проезд, 8/14</span><span>Ежедневно · 07:00—22:00</span></div>
