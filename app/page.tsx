@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 
 const directions = [
   {
@@ -147,16 +147,8 @@ const massages = [
 ];
 
 export default function Home() {
-  const directionRail = useRef<HTMLDivElement>(null);
-  const massageRail = useRef<HTMLDivElement>(null);
-
-  function moveDirections(direction: number) {
-    directionRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
-  }
-
-  function moveMassages(direction: number) {
-    massageRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
-  }
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <main>
@@ -166,13 +158,39 @@ export default function Home() {
           <span>вдохновение<br />в пути</span>
         </a>
         <nav aria-label="Основная навигация">
-          <a href="#directions">Направления</a>
+          <a href="#directions">Занятия</a>
+          <a href="#massages">Массаж</a>
           <a href="#prices">Цены</a>
-          <a href="#about">О студии</a>
-          <a href="#contacts">Контакты</a>
+          <a href="#offers">Абонементы</a>
         </nav>
-        <a className="nav-button" href="tel:+79309098882">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a>
+        <div className="nav-actions">
+          <a className="nav-button" href="tel:+79309098882">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a>
+          <button
+            className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
+            type="button"
+            aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+            aria-expanded={menuOpen}
+            aria-controls="quick-menu"
+            onClick={() => setMenuOpen((current) => !current)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </header>
+
+      <div className={`quick-menu ${menuOpen ? "is-open" : ""}`} id="quick-menu" aria-hidden={!menuOpen}>
+        <div className="quick-menu-links">
+          <a href="#directions" onClick={closeMenu}>Занятия</a>
+          <a href="#formats" onClick={closeMenu}>Форматы групп</a>
+          <a href="#prices" onClick={closeMenu}>Цены занятий</a>
+          <a href="#massages" onClick={closeMenu}>Виды массажа</a>
+          <a href="#massage-prices" onClick={closeMenu}>Цены массажа</a>
+          <a href="#offers" onClick={closeMenu}>Абонементы</a>
+          <a href="#about" onClick={closeMenu}>О студии</a>
+        </div>
+        <a className="quick-menu-cta" href="#booking" onClick={closeMenu}>Записаться / связаться <span className="link-arrow" aria-hidden="true">→</span></a>
+      </div>
 
       <section className="hero" id="top">
         <div className="hero-photo" role="img" aria-label="Спокойная практика йоги в светлом зале" />
@@ -193,11 +211,10 @@ export default function Home() {
           <h2>Какие занятия<br /><em>есть в студии</em></h2>
           <p>Листайте карточки, сравнивайте направления и выбирайте подходящую нагрузку.</p>
         </div>
-        <div className="rail-controls" aria-label="Управление каруселью">
-          <span>Листайте, чтобы увидеть все направления</span>
-          <div><button onClick={() => moveDirections(-1)} aria-label="Предыдущие направления">←</button><button onClick={() => moveDirections(1)} aria-label="Следующие направления">→</button></div>
+        <div className="rail-controls">
+          <span>Листайте карточки в сторону, чтобы увидеть все направления</span>
         </div>
-        <div className="direction-grid" ref={directionRail}>
+        <div className="direction-grid">
           {directions.map((item) => (
             <article className="direction-card" key={item.title}>
               <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
@@ -239,11 +256,10 @@ export default function Home() {
           <h2>Виды массажа<br /><em>в студии</em></h2>
           <p>Выберите подходящий формат восстановления и уточните удобное время у администратора.</p>
         </div>
-        <div className="rail-controls" aria-label="Управление каруселью массажей">
-          <span>Листайте, чтобы увидеть все виды массажа</span>
-          <div><button onClick={() => moveMassages(-1)} aria-label="Предыдущие виды массажа">←</button><button onClick={() => moveMassages(1)} aria-label="Следующие виды массажа">→</button></div>
+        <div className="rail-controls">
+          <span>Листайте карточки в сторону, чтобы увидеть все виды массажа</span>
         </div>
-        <div className="direction-grid" ref={massageRail}>
+        <div className="direction-grid">
           {massages.map((item) => (
             <article className="direction-card" key={item.title}>
               <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
