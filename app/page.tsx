@@ -41,7 +41,7 @@ const directions = [
     text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.unsplash.com/photo-1510894347712-4b347293e6d2?auto=format&fit=crop&w=1100&q=85",
+    image: "https://cdn.pixabay.com/photo/2017/11/18/05/08/pilates-2959235_1280.jpg",
   },
   {
     number: "06",
@@ -81,7 +81,7 @@ const directions = [
     text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85",
+    image: "https://images.pexels.com/photos/6944817/pexels-photo-6944817.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "11",
@@ -89,7 +89,7 @@ const directions = [
     text: "Танцевальная практика, в которой движение помогает лучше почувствовать тело и свободнее выражать себя.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1100&q=85",
+    image: "https://images.pexels.com/photos/36189008/pexels-photo-36189008.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "12",
@@ -97,7 +97,7 @@ const directions = [
     text: "Занятие для начинающих: гамак помогает безопасно развивать гибкость и снять напряжение со спины.",
     duration: "60 минут",
     group: "Мини-группа до 4",
-    image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&w=1100&q=85",
+    image: "https://images.pexels.com/photos/6582856/pexels-photo-6582856.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
           <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке — до восьми участников.</p><strong>от 550 ₽</strong></article>
-          <article><span>02 · до 4 человек</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках — до четырёх участников. В фитнес-группе может быть до пяти.</p><strong>от 550 ₽</strong></article>
+          <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках — до четырёх участников, фитнес-группа — до пяти.</p><strong>от 550 ₽</strong></article>
           <article><span>03 · один на один</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень подготовки.</p><strong>до 1 100 ₽</strong></article>
         </div>
       </section>
