@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     description: "Студия йоги в Королёве",
     type: "website",
     locale: "ru_RU",
-    images: [{ url: "/og-v10.png", width: 1536, height: 910, alt: "Вдохновение в пути — йога, движение и массаж в Королёве" }],
+    images: [{ url: "/og-v11.png", width: 1536, height: 910, alt: "Вдохновение в пути — поможем выбрать занятие" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Вдохновение в пути",
     description: "Студия йоги в Королёве",
-    images: ["/og-v10.png"],
+    images: ["/og-v11.png"],
   },
 };
 

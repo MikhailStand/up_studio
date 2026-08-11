@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { useRef } from "react";
 
 const directions = [
   {
@@ -81,7 +81,7 @@ const directions = [
     text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.pexels.com/photos/7596900/pexels-photo-7596900.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/7484935/pexels-photo-7484935.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "11",
@@ -147,14 +147,8 @@ const massages = [
 ];
 
 export default function Home() {
-  const [sent, setSent] = useState(false);
   const directionRail = useRef<HTMLDivElement>(null);
   const massageRail = useRef<HTMLDivElement>(null);
-
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSent(true);
-  }
 
   function moveDirections(direction: number) {
     directionRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
@@ -177,7 +171,7 @@ export default function Home() {
           <a href="#about">О студии</a>
           <a href="#contacts">Контакты</a>
         </nav>
-        <a className="nav-button" href="#booking">Записаться <span>↗</span></a>
+        <a className="nav-button" href="tel:+79309098882">Позвонить <span>↗</span></a>
       </header>
 
       <section className="hero" id="top">
@@ -285,7 +279,7 @@ export default function Home() {
           <article className="popular"><span>В ритме</span><h3>12 занятий</h3><strong>9 000 ₽</strong><p>750 ₽ за одно посещение</p></article>
           <article><span>Регулярная практика</span><h3>16 занятий</h3><strong>11 200 ₽</strong><p>700 ₽ за одно посещение</p></article>
         </div>
-        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="#booking">Хочу подарить <span>↗</span></a></div>
+        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="tel:+79309098882">Уточнить <span>↗</span></a></div>
       </section>
 
       <section className="pause-section">
@@ -297,22 +291,14 @@ export default function Home() {
         <div className="booking-copy">
           <p className="section-label light">[ ПЕРВОЕ ЗАНЯТИЕ ]</p>
           <h2>Ваш путь может<br />начаться <em>сегодня</em></h2>
-          <p>Оставьте номер — администратор поможет выбрать подходящую практику и ответит на вопросы.</p>
-          <div className="booking-contact"><span>Или позвоните нам</span><a href="tel:+79309098882">+7 930 909-88-82</a></div>
+          <p>Позвоните администратору — вам помогут выбрать подходящую практику, уточнят расписание и наличие места.</p>
         </div>
-        <form onSubmit={submit} className="booking-form">
-          {sent ? (
-            <div className="success"><span>✓</span><h3>Заявка принята</h3><p>Это демонстрация формы. На готовом сайте заявка будет приходить администратору студии.</p><button type="button" onClick={() => setSent(false)}>Заполнить ещё раз</button></div>
-          ) : (
-            <>
-              <label>Ваше имя<input required name="name" placeholder="Как к вам обращаться?" /></label>
-              <label>Телефон<input required name="phone" type="tel" placeholder="+7 999 000-00-00" /></label>
-              <label>Что вас интересует?<select name="direction" defaultValue=""><option value="" disabled>Выберите направление</option><option>Хатха-йога</option><option>Аэройога</option><option>Здоровая спина</option><option>Йогатерапия для женского здоровья</option><option>Кундалини-йога</option><option>Пилатес</option><option>Стретчинг</option><option>Гвоздестояние</option><option>Персональное занятие</option><option>Йога-массаж</option></select></label>
-              <button type="submit">Записаться на занятие <span>↗</span></button>
-              <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных</small>
-            </>
-          )}
-        </form>
+        <div className="booking-phone-card">
+          <span>Администратор студии</span>
+          <a href="tel:+79309098882">+7 930 909-88-82</a>
+          <p>Ежедневно · 07:00—22:00</p>
+          <a className="call-button" href="tel:+79309098882">Позвонить администратору <span>↗</span></a>
+        </div>
       </section>
 
       <footer id="contacts">
