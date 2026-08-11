@@ -101,9 +101,55 @@ const directions = [
   },
 ];
 
+const massages = [
+  {
+    number: "01",
+    title: "Воротниковая зона",
+    text: "Мягкая работа с шеей и плечами, помогающая снять накопившееся напряжение.",
+    duration: "30 минут",
+    image: "https://images.pexels.com/photos/14187889/pexels-photo-14187889.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+  {
+    number: "02",
+    title: "Массаж спины",
+    text: "Проработка мышц спины для расслабления, восстановления и ощущения лёгкости.",
+    duration: "30 минут",
+    image: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+  {
+    number: "03",
+    title: "Общий спортивный",
+    text: "Интенсивная работа с мышцами всего тела после нагрузок и активных тренировок.",
+    duration: "60 минут",
+    image: "https://images.pexels.com/photos/5794055/pexels-photo-5794055.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+  {
+    number: "04",
+    title: "Тайский массаж",
+    text: "Сочетание мягких надавливаний и растяжения для подвижности и глубокого расслабления.",
+    duration: "90 минут",
+    image: "https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+  {
+    number: "05",
+    title: "Relax-массаж",
+    text: "Спокойный сеанс для снятия усталости, переключения внимания и отдыха.",
+    duration: "60 минут",
+    image: "https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+  {
+    number: "06",
+    title: "Массаж стоп",
+    text: "Деликатная проработка стоп для расслабления и уменьшения ощущения тяжести.",
+    duration: "30 минут",
+    image: "https://images.pexels.com/photos/19695942/pexels-photo-19695942.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  },
+];
+
 export default function Home() {
   const [sent, setSent] = useState(false);
   const directionRail = useRef<HTMLDivElement>(null);
+  const massageRail = useRef<HTMLDivElement>(null);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -112,6 +158,10 @@ export default function Home() {
 
   function moveDirections(direction: number) {
     directionRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
+  }
+
+  function moveMassages(direction: number) {
+    massageRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
   }
 
   return (
@@ -173,8 +223,34 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="massages section" id="massages">
+        <div className="section-heading">
+          <p className="section-label">[ 02 — МАССАЖ ]</p>
+          <h2>Виды массажа<br /><em>в студии</em></h2>
+          <p>Выберите подходящий формат восстановления и уточните удобное время у администратора.</p>
+        </div>
+        <div className="rail-controls" aria-label="Управление каруселью массажей">
+          <span>Листайте, чтобы увидеть все виды массажа</span>
+          <div><button onClick={() => moveMassages(-1)} aria-label="Предыдущие виды массажа">←</button><button onClick={() => moveMassages(1)} aria-label="Следующие виды массажа">→</button></div>
+        </div>
+        <div className="direction-grid" ref={massageRail}>
+          {massages.map((item) => (
+            <article className="direction-card" key={item.title}>
+              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
+                <span>{item.number}</span><span className="card-arrow">↗</span>
+              </div>
+              <div className="card-body">
+                <div className="card-meta"><span className="pill">{item.duration}</span></div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="formats section" id="formats">
-        <div className="format-heading"><p className="section-label">[ 02 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
+        <div className="format-heading"><p className="section-label">[ 03 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
           <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке — до восьми участников.</p><strong>от 550 ₽</strong></article>
           <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках — до четырёх участников, фитнес-группа — до пяти.</p><strong>от 550 ₽</strong></article>
@@ -185,7 +261,7 @@ export default function Home() {
       <section className="studio-story" id="about">
         <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой" />
         <div className="story-copy">
-          <p className="section-label">[ 03 — О СТУДИИ ]</p>
+          <p className="section-label">[ 04 — О СТУДИИ ]</p>
           <h2>Студия для начинающих<br />и опытных учеников</h2>
           <p className="story-lead">В «Вдохновении в пути» можно заниматься йогой, пилатесом, фитнесом и растяжкой, попробовать практики в гамаках или записаться на массаж.</p>
           <p>Если вы не знаете, что выбрать, администратор поможет подобрать занятие по цели, уровню подготовки и удобному формату.</p>
@@ -194,7 +270,7 @@ export default function Home() {
 
       <section className="prices section" id="prices">
         <div className="price-heading">
-          <div><p className="section-label">[ 04 — ЦЕНЫ ]</p><h2>Сколько стоят<br /><em>занятия</em></h2></div>
+          <div><p className="section-label">[ 05 — ЦЕНЫ ]</p><h2>Сколько стоят<br /><em>занятия</em></h2></div>
           <div className="price-source"><span>Единая цена групповых занятий</span><p>Йога, пилатес, фитнес, растяжка и занятия в гамаках стоят 550 ₽ за одно посещение.</p></div>
         </div>
         <div className="price-strip">
@@ -203,11 +279,11 @@ export default function Home() {
           <article><span className="price-kicker">60 минут</span><h3>Йога-массаж</h3><strong>2 000 <small>₽</small></strong><p>Растяжка, мягкое снятие зажимов и глубокое расслабление.</p></article>
         </div>
 
-        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы со скидкой</h3></div></div>
+        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы на месяц</h3></div></div>
         <div className="membership-grid">
-          <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p></article>
-          <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p></article>
-          <article><div className="discount">−15%</div><span>Погружение</span><h3>12 занятий</h3><strong>5 610 ₽</strong><s>6 600 ₽</s><p>Для регулярной практики</p></article>
+          <article><span>Лёгкий старт</span><h3>12 занятий</h3><strong>7 200 ₽</strong><p>Абонемент действует один месяц</p></article>
+          <article className="popular"><span>В ритме</span><h3>16 занятий</h3><strong>9 900 ₽</strong><p>Для регулярных занятий в течение месяца</p></article>
+          <article><span>Свободный ритм</span><h3>Безлимит</h3><strong>12 900 ₽</strong><p>Посещения в течение одного месяца</p></article>
         </div>
         <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="#booking">Хочу подарить <span>↗</span></a></div>
       </section>

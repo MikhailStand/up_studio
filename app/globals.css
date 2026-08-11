@@ -32,6 +32,7 @@ em { font-weight:500; color:var(--peach); }
 .section-label { font-size:10px; letter-spacing:.2em; font-weight:600; margin:0; }
 .section-heading h2,.booking h2,footer h2 { font-size:clamp(55px,6.2vw,96px); }
 .directions { background:#e8e7db; }
+.massages { background:#f1e9df; }
 .section-heading { display:grid; grid-template-columns:1fr 2fr 1fr; align-items:end; gap:50px; }
 .section-heading>p:last-child { font-size:13px; line-height:1.8; }
 .rail-controls { margin-top:65px; padding-top:20px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; text-transform:uppercase; font-size:9px; letter-spacing:.13em; }
