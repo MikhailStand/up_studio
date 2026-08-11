@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 const directions = [
   {
@@ -12,33 +12,66 @@ const directions = [
   },
   {
     number: "02",
-    title: "Женская практика",
-    text: "Мягкое занятие с заботой о женском здоровье, подвижности и бережном восстановлении ресурса.",
+    title: "Йогатерапия",
+    text: "Практика для женского здоровья по методу Birthlight Well Woman Yoga — мягко и с вниманием к состоянию.",
     meta: "Мягкая нагрузка",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1100&q=85",
   },
   {
     number: "03",
-    title: "Йога для беременных",
-    text: "Осознанное движение, дыхание и расслабление в комфортном темпе с вниманием к каждому состоянию.",
-    meta: "По согласованию",
+    title: "Аэройога",
+    text: "Практика в мини-группе до четырёх человек: гамак, баланс, координация и бережное вытяжение позвоночника.",
+    meta: "Мини-группа до 4",
     image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1100&q=85",
   },
-];
-
-const schedule = [
-  { day: "ПН", date: "12", time: "09:00", title: "Хатха-йога", level: "Мягкая практика" },
-  { day: "СР", date: "14", time: "19:00", title: "Здоровая спина", level: "Все уровни" },
-  { day: "ПТ", date: "16", time: "18:30", title: "Женская практика", level: "Мягкая практика" },
-  { day: "СБ", date: "17", time: "11:00", title: "Хатха-йога", level: "Все уровни" },
+  {
+    number: "04",
+    title: "Здоровая спина",
+    text: "Программа для укрепления мышц спины, оздоровления позвоночника и улучшения осанки.",
+    meta: "Спина и осанка",
+    image: "https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "05",
+    title: "Пилатес",
+    text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
+    meta: "60 минут",
+    image: "https://images.unsplash.com/photo-1510894347712-4b347293e6d2?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "06",
+    title: "Аэростретчинг",
+    text: "Мягкая растяжка в гамаках с динамическими, статическими и перевёрнутыми положениями.",
+    meta: "Воздушная практика",
+    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "07",
+    title: "Кундалини-йога",
+    text: "Йога осознания, объединяющая движение, дыхание, внимание и медитативную практику.",
+    meta: "Йога осознания",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=85",
+  },
+  {
+    number: "08",
+    title: "Фитнес + растяжка",
+    text: "Динамическая тренировка в мини-группе: укрепление мышц всего тела и работа над гибкостью.",
+    meta: "Мини-группа 4–5",
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1100&q=85",
+  },
 ];
 
 export default function Home() {
   const [sent, setSent] = useState(false);
+  const directionRail = useRef<HTMLDivElement>(null);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSent(true);
+  }
+
+  function moveDirections(direction: number) {
+    directionRail.current?.scrollBy({ left: direction * 390, behavior: "smooth" });
   }
 
   return (
@@ -50,7 +83,7 @@ export default function Home() {
         </a>
         <nav aria-label="Основная навигация">
           <a href="#directions">Направления</a>
-          <a href="#schedule">Расписание</a>
+          <a href="#prices">Цены</a>
           <a href="#about">О студии</a>
           <a href="#contacts">Контакты</a>
         </nav>
@@ -94,7 +127,11 @@ export default function Home() {
           <h2>Выберите свою<br /><em>практику</em></h2>
           <p>У каждого свой ритм и свой путь. Начните с того, что откликается именно вам.</p>
         </div>
-        <div className="direction-grid">
+        <div className="rail-controls" aria-label="Управление каруселью">
+          <span>Листайте, чтобы увидеть все направления</span>
+          <div><button onClick={() => moveDirections(-1)} aria-label="Предыдущие направления">←</button><button onClick={() => moveDirections(1)} aria-label="Следующие направления">→</button></div>
+        </div>
+        <div className="direction-grid" ref={directionRail}>
           {directions.map((item) => (
             <article className="direction-card" key={item.title}>
               <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
@@ -111,30 +148,33 @@ export default function Home() {
         </div>
         <div className="more-practices">
           <p>Также в студии</p>
-          <div><span>Персональные занятия</span><span>Здоровая спина</span><span>Массаж</span><span>Релакс-практики</span></div>
+          <div><span>Гвоздестояние</span><span>Стретчинг</span><span>Танцевальная практика</span><span>Йога-массаж</span></div>
         </div>
+      </section>
+
+      <section className="prices section" id="prices">
+        <div className="price-heading">
+          <div><p className="section-label">[ 03 — СТОИМОСТЬ ]</p><h2>Практика,<br /><em>доступная каждому</em></h2></div>
+          <div className="price-source"><span>Актуально по карточке студии</span><p>Все групповые направления в опубликованном прайсе имеют единую стоимость. Перед визитом рекомендуем уточнить наличие места.</p></div>
+        </div>
+        <div className="price-strip">
+          <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong><a href="#booking">Выбрать практику ↗</a></article>
+          <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><strong>до 1 100 <small>₽</small></strong><p>Точная стоимость зависит от выбранного направления.</p></article>
+          <article><span className="price-kicker">60 минут</span><h3>Йога-массаж</h3><strong>2 000 <small>₽</small></strong><p>Растяжка, мягкое снятие зажимов и глубокое расслабление.</p></article>
+        </div>
+
+        <div className="membership-head"><div><span>Новая концепция</span><h3>Абонементы с выгодой</h3></div><p>Эти варианты подготовлены для демонстрации сайта и требуют подтверждения студией перед реальным запуском.</p></div>
+        <div className="membership-grid">
+          <article><div className="discount">−5%</div><span>Лёгкий старт</span><h3>4 занятия</h3><strong>2 090 ₽</strong><s>2 200 ₽</s><p>Для одной практики в неделю</p><a href="#booking">Выбрать</a></article>
+          <article className="popular"><div className="discount">−10%</div><span>В ритме</span><h3>8 занятий</h3><strong>3 960 ₽</strong><s>4 400 ₽</s><p>Самый комфортный темп</p><a href="#booking">Выбрать</a></article>
+          <article><div className="discount">−15%</div><span>Погружение</span><h3>12 занятий</h3><strong>5 610 ₽</strong><s>6 600 ₽</s><p>Для регулярной практики</p><a href="#booking">Выбрать</a></article>
+        </div>
+        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="#booking">Хочу подарить <span>↗</span></a></div>
       </section>
 
       <section className="pause-section">
         <div className="pause-copy"><p className="eyebrow"><span /> Время для себя</p><h2>Иногда нужно<br />просто <em>остановиться</em></h2></div>
         <blockquote>«После практики мир остаётся прежним. Но вы смотрите на него уже иначе»</blockquote>
-      </section>
-
-      <section className="schedule section" id="schedule">
-        <div className="schedule-title">
-          <div><p className="section-label">[ 03 — РАСПИСАНИЕ ]</p><h2>Ближайшие<br /><em>занятия</em></h2></div>
-          <p className="demo-note">Пример расписания для демонстрации сайта.<br />Актуальное время уточняйте в студии.</p>
-        </div>
-        <div className="schedule-list">
-          {schedule.map((item) => (
-            <a href="#booking" className="schedule-row" key={item.day + item.time}>
-              <div className="date"><b>{item.date}</b><span>{item.day}</span></div>
-              <time>{item.time}</time>
-              <div><h3>{item.title}</h3><p>{item.level}</p></div>
-              <span className="row-action">Записаться <i>↗</i></span>
-            </a>
-          ))}
-        </div>
       </section>
 
       <section className="booking section" id="booking">
@@ -151,7 +191,7 @@ export default function Home() {
             <>
               <label>Ваше имя<input required name="name" placeholder="Как к вам обращаться?" /></label>
               <label>Телефон<input required name="phone" type="tel" placeholder="+7 999 000-00-00" /></label>
-              <label>Что вас интересует?<select name="direction" defaultValue=""><option value="" disabled>Выберите направление</option><option>Хатха-йога</option><option>Женская практика</option><option>Йога для беременных</option><option>Персональное занятие</option><option>Массаж</option></select></label>
+              <label>Что вас интересует?<select name="direction" defaultValue=""><option value="" disabled>Выберите направление</option><option>Хатха-йога</option><option>Аэройога</option><option>Здоровая спина</option><option>Йогатерапия для женского здоровья</option><option>Кундалини-йога</option><option>Пилатес</option><option>Стретчинг</option><option>Гвоздестояние</option><option>Персональное занятие</option><option>Йога-массаж</option></select></label>
               <button type="submit">Записаться на занятие <span>↗</span></button>
               <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных</small>
             </>
