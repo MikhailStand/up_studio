@@ -200,9 +200,7 @@ export default function Home() {
         <div className="direction-grid" ref={directionRail}>
           {directions.map((item) => (
             <article className="direction-card" key={item.title}>
-              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
-                <span>{item.number}</span>
-              </div>
+              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
               <div className="card-body">
                 <div className="card-meta">
                   <span className="pill">{item.duration}</span>
@@ -249,9 +247,7 @@ export default function Home() {
         <div className="direction-grid" ref={massageRail}>
           {massages.map((item) => (
             <article className="direction-card" key={item.title}>
-              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }}>
-                <span>{item.number}</span>
-              </div>
+              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
               <div className="card-body">
                 <div className="card-meta"><span className="pill">{item.duration}</span></div>
                 <h3>{item.title}</h3>
