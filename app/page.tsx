@@ -104,23 +104,6 @@ export default function Home() {
         <div className="hero-info"><span>Дворцовый проезд, 8/14</span><span>Ежедневно · 07:00—22:00</span></div>
       </section>
 
-      <section className="intro section" id="about">
-        <p className="section-label">[ 01 — О СТУДИИ ]</p>
-        <div className="intro-main">
-          <h2>Не стремиться стать лучше.<br />А стать <em>ближе к себе.</em></h2>
-          <div className="intro-text">
-            <p>«Вдохновение в пути» — камерная студия для тех, кто ищет не спортивные рекорды, а устойчивость, здоровье и ясность.</p>
-            <p>Мы бережно знакомим с практикой начинающих и помогаем опытным ученикам двигаться глубже.</p>
-          </div>
-        </div>
-        <div className="stats">
-          <div><strong>4,8</strong><span>рейтинг студии</span></div>
-          <div><strong>22</strong><span>оценки гостей</span></div>
-          <div><strong>7/7</strong><span>дней в неделю</span></div>
-          <div className="quote"><span>“</span><p>Практика начинается там, где заканчивается спешка.</p></div>
-        </div>
-      </section>
-
       <section className="directions section" id="directions">
         <div className="section-heading">
           <p className="section-label">[ 02 — НАПРАВЛЕНИЯ ]</p>
@@ -149,6 +132,21 @@ export default function Home() {
         <div className="more-practices">
           <p>Также в студии</p>
           <div><span>Гвоздестояние</span><span>Стретчинг</span><span>Танцевальная практика</span><span>Йога-массаж</span></div>
+        </div>
+      </section>
+
+      <section className="studio-story" id="about">
+        <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой">
+          <div className="story-rating"><strong>4,8</strong><span>рейтинг на Яндекс Картах<br />по 22 оценкам</span></div>
+        </div>
+        <div className="story-copy">
+          <p className="section-label">[ О ПРОСТРАНСТВЕ ]</p>
+          <h2>Здесь можно быть<br /><em>в своём ритме</em></h2>
+          <p className="story-lead">«Вдохновение в пути» — уютная студия в Королёве, где в одном месте собраны йога, фитнес, практики в гамаках и массаж.</p>
+          <p>Можно прийти совсем без опыта: преподаватель поможет выбрать направление и спокойно познакомит с практикой. Группы камерные, поэтому внимания хватает каждому.</p>
+          <div className="story-features"><span>Мини-группы</span><span>Личный тренер</span><span>Йога для беременных</span><span>Массаж</span><span>Парковка</span><span>Wi-Fi</span></div>
+          <blockquote><span>“</span><p>Очень уютная студия с доброжелательной атмосферой. В одном месте можно заниматься йогой, фитнесом, тянуться в гамаке и прийти на массаж.</p></blockquote>
+          <a href="#booking">Познакомиться со студией <span>↗</span></a>
         </div>
       </section>
 
