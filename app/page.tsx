@@ -8,7 +8,7 @@ const directions = [
     title: "Хатха-йога",
     text: "Спокойная, внимательная практика: укрепляем тело, раскрываем дыхание и возвращаем внутреннюю опору.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -16,7 +16,7 @@ const directions = [
     title: "Йогатерапия",
     text: "Практика для женского здоровья по методу Birthlight Well Woman Yoga — мягко и с вниманием к состоянию.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -24,7 +24,7 @@ const directions = [
     title: "Аэройога",
     text: "Практика в мини-группе до четырёх человек: гамак, баланс, координация и бережное вытяжение позвоночника.",
     duration: "60 минут",
-    group: "Мини-группа до 4",
+    group: "Мини-группа до 4 человек",
     image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -32,7 +32,7 @@ const directions = [
     title: "Здоровая спина",
     text: "Программа для укрепления мышц спины, оздоровления позвоночника и улучшения осанки.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -40,7 +40,7 @@ const directions = [
     title: "Пилатес",
     text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.pexels.com/photos/8614454/pexels-photo-8614454.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
@@ -48,7 +48,7 @@ const directions = [
     title: "Аэростретчинг",
     text: "Мягкая растяжка в гамаках с динамическими, статическими и перевёрнутыми положениями.",
     duration: "60 минут",
-    group: "Мини-группа до 4",
+    group: "Мини-группа до 4 человек",
     image: "https://images.pexels.com/photos/4999398/pexels-photo-4999398.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
@@ -56,7 +56,7 @@ const directions = [
     title: "Кундалини-йога",
     text: "Йога осознания, объединяющая движение, дыхание, внимание и медитативную практику.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -64,7 +64,7 @@ const directions = [
     title: "Фитнес + растяжка",
     text: "Динамическая тренировка в мини-группе: укрепление мышц всего тела и работа над гибкостью.",
     duration: "60 минут",
-    group: "Мини-группа 4–5",
+    group: "Мини-группа до 5 человек",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -72,7 +72,7 @@ const directions = [
     title: "Стретчинг",
     text: "Мягкая работа над гибкостью и подвижностью суставов без резких движений и перегрузки.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85",
   },
   {
@@ -80,7 +80,7 @@ const directions = [
     title: "Гвоздестояние",
     text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.pexels.com/photos/7484935/pexels-photo-7484935.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
@@ -88,7 +88,7 @@ const directions = [
     title: "Слушая тело",
     text: "Танцевальная практика, в которой движение помогает лучше почувствовать тело и свободнее выражать себя.",
     duration: "60 минут",
-    group: "Группа до 8",
+    group: "Группа до 8 человек",
     image: "https://images.pexels.com/photos/36189008/pexels-photo-36189008.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
@@ -96,7 +96,7 @@ const directions = [
     title: "Растяжка в гамаках",
     text: "Занятие для начинающих: гамак помогает безопасно развивать гибкость и снять напряжение со спины.",
     duration: "60 минут",
-    group: "Мини-группа до 4",
+    group: "Мини-группа до 4 человек",
     image: "https://images.pexels.com/photos/6582856/pexels-photo-6582856.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
 ];
@@ -217,9 +217,9 @@ export default function Home() {
       <section className="formats section" id="formats">
         <div className="format-heading"><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
-          <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
-          <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
-          <article><span>03 · один на один</span><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
+          <article><span>До 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
+          <article><span>До 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
+          <article><span>Один на один</span><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
         </div>
       </section>
 

@@ -56,6 +56,35 @@ em { font-weight:500; color:var(--peach); }
 .booking-form { padding-top:15px; }.booking-form label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:30px}.booking-form input,.booking-form select{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.35);padding:14px 0;color:white;outline:none;font-size:14px;text-transform:none;letter-spacing:0;border-radius:0}.booking-form input:focus,.booking-form select:focus{border-color:white}.booking-form select option{color:#173d35}.booking-form button{border:0;background:var(--peach);color:white;width:100%;padding:18px 22px;border-radius:2px;display:flex;justify-content:space-between;cursor:pointer;margin-top:40px;font-size:11px;text-transform:uppercase;letter-spacing:.12em}.booking-form small{display:block;font-size:8px;line-height:1.6;opacity:.45;margin-top:14px}.success{border:1px solid rgba(255,255,255,.25);padding:45px}.success>span{width:48px;height:48px;border-radius:50%;background:var(--peach);display:grid;place-items:center}.success h3{font:38px "Cormorant Garamond",serif;margin:25px 0 10px}.success p{font-size:12px;line-height:1.8;opacity:.7}.success button{margin-top:25px}
 .booking-phone-card{align-self:center;border:1px solid rgba(255,255,255,.28);padding:45px;display:flex;flex-direction:column;gap:16px}.booking-phone-card>span{font-size:9px;text-transform:uppercase;letter-spacing:.16em;opacity:.65}.booking-phone-card>a:not(.call-button){font:500 clamp(32px,3vw,46px) "Cormorant Garamond",serif}.booking-phone-card>p{margin:0 0 22px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.6}.call-button{background:var(--peach);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}.link-arrow{display:inline-block;font:500 18px/1 Arial,sans-serif!important;letter-spacing:0!important;transform:translateY(-1px)}
 footer { background:#102e28;color:white;padding:90px 7.5vw 25px; }.footer-top{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:start}.footer-brand{margin-top:5px}.footer-contacts{display:flex;flex-direction:column;gap:25px;font-size:12px;line-height:1.7}.footer-contacts p{margin:0}.footer-contacts>a:last-child{text-transform:uppercase;font-size:9px;letter-spacing:.13em;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:12px}.footer-bottom{border-top:1px solid rgba(255,255,255,.18);margin-top:90px;padding-top:22px;display:flex;justify-content:space-between;font-size:8px;text-transform:uppercase;letter-spacing:.12em;opacity:.6}
+
+/* Readability and contrast */
+.prices:before{display:none}
+.directions em,.massages em,.prices em{color:#9e543c}
+.section-heading>p:last-child,.format-heading>div>p{font-size:16px;line-height:1.75}
+.eyebrow,.hero-info{font-size:11px}
+.rail-controls{font-size:11px;line-height:1.55}
+.pill{font-size:11px;font-weight:600;padding:9px 14px;border-width:1.5px}
+.card-body p{font-size:15px;line-height:1.7;min-height:78px}
+.format-grid article>span{font-size:11px}
+.format-grid p{font-size:15px;line-height:1.7;opacity:.78}
+.price-source span,.price-kicker{font-size:11px}
+.price-source p,.price-strip p{font-size:14px;line-height:1.7}
+.price-phone-link{font-size:11px}
+.membership-head>div>span{font-size:12px;padding:10px 18px}
+.membership-grid article>span{font-size:11px}
+.membership-grid p{font-size:14px;line-height:1.6}
+.gift-banner>div>span{font-size:11px}
+.gift-banner p{font-size:14px;line-height:1.6}
+.gift-banner>a{font-size:11px}
+.story-copy>p{font-size:16px;line-height:1.7}
+.story-copy .story-lead{font-size:18px!important}
+.booking-copy>p{font-size:16px;line-height:1.7}
+.booking-phone-card>span{font-size:11px}
+.booking-phone-card>p{font-size:12px}
+.call-button{font-size:11px}
+.footer-contacts{font-size:14px}
+.footer-contacts>a:last-child{font-size:11px}
+.footer-bottom{font-size:10px}
 @keyframes reveal { from{transform:scale(1.06);filter:brightness(.7)} to{transform:scale(1);filter:brightness(1)} }
 @media(max-width:900px){
   .nav-wrap{height:74px;padding:0 22px}.nav-wrap nav{display:none}.nav-button{padding:11px 15px}.hero{min-height:730px}.hero-copy{left:24px;top:19%;width:calc(100% - 48px)}h1{font-size:68px;margin-top:65px}.hero-bottom{gap:20px;align-items:flex-start;flex-direction:column}.hero-bottom p{max-width:none;width:auto}.hero-primary{width:230px}.hero-info{padding:18px 22px;gap:20px}.hero-info span:last-child{display:none}
