@@ -219,14 +219,13 @@ export default function Home() {
         <div className="format-grid">
           <article><span>До 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
           <article><span>До 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
-          <article><span>Один на один</span><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
+          <article><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
         </div>
       </section>
 
       <section className="prices section" id="prices">
         <div className="price-heading">
           <div><h2>Сколько стоят<br /><em>занятия</em></h2></div>
-          <div className="price-source"><span>Единая цена групповых занятий</span><p>Йога, пилатес, фитнес, растяжка и занятия в гамаках стоят 550 ₽ за одно посещение.</p></div>
         </div>
         <div className="price-strip">
           <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong></article>
@@ -261,7 +260,6 @@ export default function Home() {
       <section className="prices massage-prices section" id="massage-prices">
         <div className="price-heading">
           <div><h2>Стоимость<br /><em>массажа</em></h2></div>
-          <div className="price-source"><span>Цена зависит от времени</span><p>Выберите продолжительность сеанса, а подходящий вид массажа уточните у администратора.</p></div>
         </div>
         <div className="price-strip massage-price-strip">
           <article><span className="price-kicker">Короткий сеанс</span><h3>30 минут</h3><p>Для воротниковой зоны, спины или стоп.</p><strong>от 1 200 <small>₽</small></strong></article>

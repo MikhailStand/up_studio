@@ -85,11 +85,32 @@ footer { background:#102e28;color:white;padding:90px 7.5vw 25px; }.footer-top{di
 .footer-contacts{font-size:14px}
 .footer-contacts>a:last-child{font-size:11px}
 .footer-bottom{font-size:10px}
+
+/* Compact rhythm */
+.section{padding:105px 7.5vw}
+.section-heading{gap:36px}
+.rail-controls{margin-top:50px}
+.direction-grid{margin-top:18px}
+.card-meta{flex-direction:column;align-items:flex-start;gap:8px}
+.card-body p{min-height:0}
+.format-grid{margin-top:48px}
+.format-grid article{min-height:220px;padding:28px}
+.format-grid article>span{font-size:17px;font-weight:600;line-height:1.25;letter-spacing:-.02em;text-transform:none;opacity:1}
+.format-grid h3{margin:26px 0 14px}
+.format-grid article>h3:first-child{margin-top:0}
+.price-heading{grid-template-columns:1fr}
+.price-strip{margin-top:55px}
+.price-strip article{min-height:290px}
+.membership-head{margin-top:85px}
+.membership-grid article{min-height:270px}
+.gift-banner{margin-top:55px}
+.pause-section{min-height:560px}
 @keyframes reveal { from{transform:scale(1.06);filter:brightness(.7)} to{transform:scale(1);filter:brightness(1)} }
 @media(max-width:900px){
   .nav-wrap{height:74px;padding:0 22px}.nav-wrap nav{display:none}.nav-button{padding:11px 15px}.hero{min-height:730px}.hero-copy{left:24px;top:19%;width:calc(100% - 48px)}h1{font-size:68px;margin-top:65px}.hero-bottom{gap:20px;align-items:flex-start;flex-direction:column}.hero-bottom p{max-width:none;width:auto}.hero-primary{width:230px}.hero-info{padding:18px 22px;gap:20px}.hero-info span:last-child{display:none}
   .section{padding:90px 24px}.section-heading,.booking,.footer-top,.price-heading,.format-heading{grid-template-columns:1fr}.direction-grid{margin-top:20px;margin-right:-24px;padding-right:24px}.card-photo{height:390px}.section-heading{gap:30px}.rail-controls{margin-top:40px}.rail-controls>span{max-width:190px;line-height:1.5}.format-heading{gap:35px}.format-grid{grid-template-columns:1fr}.format-grid article{border-right:0;border-bottom:1px solid var(--line)}.format-grid article:last-child{border-bottom:0}.studio-story{grid-template-columns:1fr}.story-photo{min-height:520px}.story-copy{padding:75px 24px}.story-copy h2{margin:50px 0 32px}.price-heading{gap:40px}.price-heading h2{margin-top:50px}.price-source{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:25px}.price-strip{grid-template-columns:1fr}.price-strip article{border-right:0;border-bottom:1px solid var(--line);min-height:280px}.price-strip article:last-child{border-bottom:0}.membership-head{display:block;scroll-margin-top:90px}.membership-head>p{width:auto;margin-top:25px}.membership-grid{grid-template-columns:1fr}.membership-grid .popular{transform:none}.gift-banner{padding:35px 28px;align-items:flex-start;gap:35px}.gift-banner>a{flex:0 0 auto}.pause-section{padding:80px 24px;min-height:650px}.pause-section blockquote{width:85%}.booking{gap:70px}.booking-contact{margin-top:45px}.footer-top{gap:60px}.footer-bottom{gap:18px;flex-wrap:wrap}
 }
-@media(max-width:900px){.story-copy h2{margin:0 0 32px}.price-heading h2{margin-top:0}}
+@media(max-width:900px){.section{padding:72px 24px}.story-copy h2{margin:0 0 32px}.price-heading h2{margin-top:0}.format-grid article{min-height:210px}.price-strip article{min-height:240px}.membership-grid article{min-height:260px}.pause-section{min-height:540px}}
 @media(max-width:520px){h1{font-size:53px}.hero-bottom p{font-size:12px}.section-heading h2,.booking h2,footer h2,.price-heading h2,.story-copy h2{font-size:43px;line-height:1.08}.format-heading h2{font-size:40px}.format-grid{grid-template-columns:1fr}.format-grid article{border-right:0;min-height:260px}.card-photo{height:300px}.story-photo{min-height:390px}.price-strip strong{font-size:40px}.membership-head h3{font-size:36px}.gift-banner{display:block}.gift-banner>a{margin-top:25px;width:max-content}.booking{padding-top:80px}.nav-button span{display:none}}
+@media(max-width:520px){.section{padding:68px 24px}.format-grid article{min-height:210px}.pause-section{min-height:520px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-photo{animation:none}.direction-card,.schedule-row{transition:none}}
