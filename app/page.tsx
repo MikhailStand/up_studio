@@ -81,7 +81,7 @@ const directions = [
     text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
     duration: "60 минут",
     group: "Группа до 8",
-    image: "https://images.pexels.com/photos/7597258/pexels-photo-7597258.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/7596900/pexels-photo-7596900.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "11",
@@ -114,21 +114,21 @@ const massages = [
     title: "Массаж спины",
     text: "Проработка мышц спины для расслабления, восстановления и ощущения лёгкости.",
     duration: "30 минут",
-    image: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/4599403/pexels-photo-4599403.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "03",
     title: "Общий спортивный",
     text: "Интенсивная работа с мышцами всего тела после нагрузок и активных тренировок.",
     duration: "60 минут",
-    image: "https://images.pexels.com/photos/5794055/pexels-photo-5794055.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/6628647/pexels-photo-6628647.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "04",
     title: "Тайский массаж",
     text: "Сочетание мягких надавливаний и растяжения для подвижности и глубокого расслабления.",
     duration: "90 минут",
-    image: "https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1100",
+    image: "https://images.pexels.com/photos/3865491/pexels-photo-3865491.jpeg?auto=compress&cs=tinysrgb&w=1100",
   },
   {
     number: "05",
@@ -252,9 +252,9 @@ export default function Home() {
       <section className="formats section" id="formats">
         <div className="format-heading"><p className="section-label">[ 03 — ФОРМАТЫ ]</p><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
         <div className="format-grid">
-          <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия по йоге, пилатесу, фитнесу и растяжке — до восьми участников.</p><strong>от 550 ₽</strong></article>
-          <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Аэройога и растяжка в гамаках — до четырёх участников, фитнес-группа — до пяти.</p><strong>от 550 ₽</strong></article>
-          <article><span>03 · один на один</span><h3>Персонально</h3><p>Индивидуальное занятие с преподавателем под ваши задачи и уровень подготовки.</p><strong>до 1 100 ₽</strong></article>
+          <article><span>01 · до 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
+          <article><span>02 · до 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
+          <article><span>03 · один на один</span><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
         </div>
       </section>
 
@@ -281,9 +281,9 @@ export default function Home() {
 
         <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы на месяц</h3></div></div>
         <div className="membership-grid">
-          <article><span>Лёгкий старт</span><h3>12 занятий</h3><strong>7 200 ₽</strong><p>Абонемент действует один месяц</p></article>
-          <article className="popular"><span>В ритме</span><h3>16 занятий</h3><strong>9 900 ₽</strong><p>Для регулярных занятий в течение месяца</p></article>
-          <article><span>Свободный ритм</span><h3>Безлимит</h3><strong>12 900 ₽</strong><p>Посещения в течение одного месяца</p></article>
+          <article><span>Лёгкий старт</span><h3>8 занятий</h3><strong>7 200 ₽</strong><p>900 ₽ за одно посещение</p></article>
+          <article className="popular"><span>В ритме</span><h3>12 занятий</h3><strong>9 000 ₽</strong><p>750 ₽ за одно посещение</p></article>
+          <article><span>Регулярная практика</span><h3>16 занятий</h3><strong>11 200 ₽</strong><p>700 ₽ за одно посещение</p></article>
         </div>
         <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="#booking">Хочу подарить <span>↗</span></a></div>
       </section>
