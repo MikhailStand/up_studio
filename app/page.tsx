@@ -2,340 +2,88 @@
 
 import { useState } from "react";
 
-const directions = [
-  {
-    number: "01",
-    title: "Хатха-йога",
-    text: "Спокойная, внимательная практика: укрепляем тело, раскрываем дыхание и возвращаем внутреннюю опору.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "02",
-    title: "Йогатерапия",
-    text: "Практика для женского здоровья по методу Birthlight Well Woman Yoga — мягко и с вниманием к состоянию.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "03",
-    title: "Аэройога",
-    text: "Практика в мини-группе до четырёх человек: гамак, баланс, координация и бережное вытяжение позвоночника.",
-    duration: "60 минут",
-    group: "Мини-группа до 4 человек",
-    image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "04",
-    title: "Здоровая спина",
-    text: "Программа для укрепления мышц спины, оздоровления позвоночника и улучшения осанки.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "05",
-    title: "Пилатес",
-    text: "Плавная часовая тренировка для развития гибкости, подвижности и укрепления мышц корпуса.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.pexels.com/photos/8614454/pexels-photo-8614454.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "06",
-    title: "Аэростретчинг",
-    text: "Мягкая растяжка в гамаках с динамическими, статическими и перевёрнутыми положениями.",
-    duration: "60 минут",
-    group: "Мини-группа до 4 человек",
-    image: "https://images.pexels.com/photos/4999398/pexels-photo-4999398.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "07",
-    title: "Кундалини-йога",
-    text: "Йога осознания, объединяющая движение, дыхание, внимание и медитативную практику.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "08",
-    title: "Фитнес + растяжка",
-    text: "Динамическая тренировка в мини-группе: укрепление мышц всего тела и работа над гибкостью.",
-    duration: "60 минут",
-    group: "Мини-группа до 5 человек",
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "09",
-    title: "Стретчинг",
-    text: "Мягкая работа над гибкостью и подвижностью суставов без резких движений и перегрузки.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85",
-  },
-  {
-    number: "10",
-    title: "Гвоздестояние",
-    text: "Практика концентрации и знакомства с доской Садху под внимательным сопровождением преподавателя.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.pexels.com/photos/7484935/pexels-photo-7484935.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "11",
-    title: "Слушая тело",
-    text: "Танцевальная практика, в которой движение помогает лучше почувствовать тело и свободнее выражать себя.",
-    duration: "60 минут",
-    group: "Группа до 8 человек",
-    image: "https://images.pexels.com/photos/36189008/pexels-photo-36189008.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "12",
-    title: "Растяжка в гамаках",
-    text: "Занятие для начинающих: гамак помогает безопасно развивать гибкость и снять напряжение со спины.",
-    duration: "60 минут",
-    group: "Мини-группа до 4 человек",
-    image: "https://images.pexels.com/photos/6582856/pexels-photo-6582856.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
+const phone = "+79804219092";
+const mapUrl = "https://yandex.ru/maps/org/vvys/156108342252?si=h9gh1zbyxezk9ynxwa45vchxzm";
+
+type PriceKind = "basic" | "air" | "kids";
+
+type Direction = {
+  title: string;
+  text: string;
+  audience: "Взрослые" | "Дети";
+  priceKind: PriceKind;
+  image: string;
+};
+
+const adultDirections: Direction[] = [
+  { title: "Функциональный тренинг + TRX", text: "Силовая тренировка на всё тело: развиваем выносливость, улучшаем осанку и укрепляем основные группы мышц.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Фитнес на полотнах", text: "Полотна поддерживают тело, снимают часть нагрузки и помогают двигаться свободнее и увереннее.", audience: "Взрослые", priceKind: "air", image: "https://images.pexels.com/photos/868483/pexels-photo-868483.jpeg?auto=compress&cs=tinysrgb&w=1100" },
+  { title: "Йога", text: "Практика для начинающих и опытных: движение, дыхание, мягкая растяжка и возвращение к внутреннему равновесию.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Пилатес GOLD", text: "Бережная программа «Золотой возраст»: аккуратно разрабатываем суставы, возвращаем силу и лёгкость движения.", audience: "Взрослые", priceKind: "basic", image: "https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=1100" },
+  { title: "Пилатес + МФР", text: "Работаем над подвижностью позвоночника и суставов, укрепляем глубокие мышцы и улучшаем гибкость.", audience: "Взрослые", priceKind: "basic", image: "https://images.pexels.com/photos/8614454/pexels-photo-8614454.jpeg?auto=compress&cs=tinysrgb&w=1100" },
+  { title: "Здоровая спина", text: "Безопасные движения для мышечного корсета, гибкости и силы спины — в медленном комфортном темпе.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Восстановление после родов", text: "Бережная работа с диастазом, тазовым дном, дыханием, осанкой и возвращением тела к активности.", audience: "Взрослые", priceKind: "basic", image: "https://images.pexels.com/photos/7055641/pexels-photo-7055641.jpeg?auto=compress&cs=tinysrgb&w=1100" },
+  { title: "Стретчинг", text: "Развиваем эластичность мышц и мобильность суставов с упражнениями для любого уровня подготовки.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Аэростретчинг в гамаке", text: "Растяжка без лишней нагрузки на суставы и позвоночник — для лёгкости, гибкости и красивой осанки.", audience: "Взрослые", priceKind: "air", image: "https://images.pexels.com/photos/4999398/pexels-photo-4999398.jpeg?auto=compress&cs=tinysrgb&w=1100" },
+  { title: "Скульптор тела", text: "Динамичная смесь силового фитнеса, растяжки и кардио для тонуса мышц и работы над фигурой.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1100&q=85" },
+  { title: "Силовая йога", text: "Более динамичная практика: плавные связки, силовая нагрузка и внимание к технике движения.", audience: "Взрослые", priceKind: "basic", image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1100&q=85" },
 ];
 
-const massages = [
-  {
-    number: "01",
-    title: "Воротниковая зона",
-    text: "Мягкая работа с шеей и плечами, помогающая снять накопившееся напряжение.",
-    duration: "30 минут",
-    image: "https://images.pexels.com/photos/14187889/pexels-photo-14187889.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "02",
-    title: "Массаж спины",
-    text: "Проработка мышц спины для расслабления, восстановления и ощущения лёгкости.",
-    duration: "30 минут",
-    image: "https://images.pexels.com/photos/4599403/pexels-photo-4599403.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "03",
-    title: "Общий спортивный",
-    text: "Интенсивная работа с мышцами всего тела после нагрузок и активных тренировок.",
-    duration: "60 минут",
-    image: "https://images.pexels.com/photos/6628647/pexels-photo-6628647.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "04",
-    title: "Тайский массаж",
-    text: "Сочетание мягких надавливаний и растяжения для подвижности и глубокого расслабления.",
-    duration: "90 минут",
-    image: "https://images.pexels.com/photos/3865491/pexels-photo-3865491.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "05",
-    title: "Relax-массаж",
-    text: "Спокойный сеанс для снятия усталости, переключения внимания и отдыха.",
-    duration: "60 минут",
-    image: "https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
-  {
-    number: "06",
-    title: "Массаж стоп",
-    text: "Деликатная проработка стоп для расслабления и уменьшения ощущения тяжести.",
-    duration: "30 минут",
-    image: "https://images.pexels.com/photos/19695942/pexels-photo-19695942.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  },
+const kidsDirections: Direction[] = [
+  { title: "Воздушная гимнастика", text: "Нескучные занятия на воздушных снарядах развивают силу, гибкость, координацию и создают хорошую физическую базу для любого спорта.", audience: "Дети", priceKind: "kids", image: "https://images.squarespace-cdn.com/content/v1/62c63e966ea22529c1e3c084/83117d5e-4a20-4d3d-b764-9035819609b2/IMG_0070.jpeg" },
 ];
+
+const tariffs = {
+  basic: { label: "Взрослый базовый", title: "Занятия на коврике", note: "Для функционального тренинга, йоги, пилатеса, здоровой спины, восстановления после родов, стретчинга и скульптора тела.", prices: [["Пробное", "600 ₽"], ["Разовое", "1 200 ₽"], ["4 занятия", "4 000 ₽"], ["6 занятий", "5 700 ₽"], ["8 занятий", "6 900 ₽"], ["12 занятий", "9 900 ₽"], ["Индивидуальное", "3 000 ₽"], ["Парное", "4 000 ₽"]] },
+  air: { label: "Взрослый воздушный", title: "Занятия в воздухе", note: "Только для фитнеса на полотнах и аэростретчинга в гамаках. Группы до 5 человек.", prices: [["Пробное", "600 ₽"], ["Разовое", "1 400 ₽"], ["4 занятия", "4 400 ₽"], ["6 занятий", "6 500 ₽"], ["8 занятий", "8 000 ₽"], ["12 занятий", "10 800 ₽"], ["Индивидуальное", "3 000 ₽"], ["Парное", "4 000 ₽"]] },
+  kids: { label: "Детский тариф", title: "Воздушная гимнастика", note: "Для детских групп, парных и индивидуальных занятий на воздушных снарядах.", prices: [["Пробное", "600 ₽"], ["Разовое", "1 000 ₽"], ["4 занятия", "3 500 ₽"], ["6 занятий", "5 100 ₽"], ["8 занятий", "6 500 ₽"], ["12 занятий", "9 500 ₽"], ["Индивидуальное", "2 800 ₽"], ["Парное", "3 500 ₽"]] },
+};
+
+function DirectionCard({ item }: { item: Direction }) {
+  return <article className="direction-card">
+    <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
+    <div className="card-body">
+      <div className="card-meta"><span className="pill">60 минут</span><span className="pill">{item.audience}</span><span className="pill">Группа</span></div>
+      <h3>{item.title}</h3><p>{item.text}</p>
+      <div className="card-price"><span>Пробное занятие</span><strong>600 ₽</strong></div>
+    </div>
+  </article>;
+}
+
+function TariffCard({ tariff }: { tariff: typeof tariffs.basic }) {
+  return <article className="tariff-card"><div className="tariff-title"><span>{tariff.label}</span><h3>{tariff.title}</h3><p>{tariff.note}</p></div><div className="tariff-list">{tariff.prices.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div></article>;
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
-  return (
-    <main>
-      <header className="nav-wrap">
-        <a className="brand" href="#top" aria-label="Вдохновение в пути — наверх">
-          <span className="brand-mark">В</span>
-          <span>вдохновение<br />в пути</span>
-        </a>
-        <nav aria-label="Основная навигация">
-          <a href="#directions">Занятия</a>
-          <a href="#massages">Массаж</a>
-          <a href="#offers">Абонементы</a>
-          <a href="#booking">Записаться</a>
-        </nav>
-        <div className="nav-actions">
-          <a className="nav-button" href="tel:+79309098882">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a>
-          <button
-            className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
-            type="button"
-            aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
-            aria-expanded={menuOpen}
-            aria-controls="quick-menu"
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            <span />
-            <span />
-          </button>
-        </div>
-      </header>
+  return <main>
+    <header className="nav-wrap">
+      <a className="brand" href="#top" aria-label="Ввысь — наверх"><span className="brand-mark">В</span><span>студия<br />Ввысь</span></a>
+      <nav aria-label="Основная навигация"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#about">О студии</a><a href="#booking">Записаться</a></nav>
+      <div className="nav-actions"><a className="nav-button" href={`tel:${phone}`}>Позвонить <span className="link-arrow" aria-hidden="true">→</span></a><button className={`menu-toggle ${menuOpen ? "is-open" : ""}`} type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} aria-controls="quick-menu" onClick={() => setMenuOpen((current) => !current)}><span /><span /></button></div>
+    </header>
 
-      <div className={`quick-menu ${menuOpen ? "is-open" : ""}`} id="quick-menu" aria-hidden={!menuOpen}>
-        <div className="quick-menu-links">
-          <a href="#directions" onClick={closeMenu}>Занятия</a>
-          <a href="#formats" onClick={closeMenu}>Форматы групп</a>
-          <a href="#prices" onClick={closeMenu}>Цены занятий</a>
-          <a href="#massages" onClick={closeMenu}>Виды массажа</a>
-          <a href="#massage-prices" onClick={closeMenu}>Цены массажа</a>
-          <a href="#offers" onClick={closeMenu}>Абонементы</a>
-          <a href="#about" onClick={closeMenu}>О студии</a>
-        </div>
-        <a className="quick-menu-cta" href="#booking" onClick={closeMenu}>Записаться / связаться <span className="link-arrow" aria-hidden="true">→</span></a>
-      </div>
+    <div className={`quick-menu ${menuOpen ? "is-open" : ""}`} id="quick-menu" aria-hidden={!menuOpen}>
+      <div className="quick-menu-links"><a href="#adults" onClick={closeMenu}>Направления для взрослых</a><a href="#adult-prices" onClick={closeMenu}>Цены для взрослых</a><a href="#kids" onClick={closeMenu}>Направления для детей</a><a href="#kids-prices" onClick={closeMenu}>Цены для детей</a><a href="#formats" onClick={closeMenu}>Как проходят занятия</a><a href="#about" onClick={closeMenu}>О студии</a><a href="#booking" onClick={closeMenu}>Контакты и запись</a></div>
+      <a className="quick-menu-cta" href={`https://wa.me/${phone.slice(1)}`} target="_blank" rel="noreferrer" onClick={closeMenu}>Написать в WhatsApp <span className="link-arrow" aria-hidden="true">→</span></a>
+    </div>
 
-      <section className="hero" id="top">
-        <div className="hero-photo" role="img" aria-label="Спокойная практика йоги в светлом зале" />
-        <div className="hero-shade" />
-        <div className="hero-copy">
-          <p className="eyebrow"><span /> Студия йоги в Королёве</p>
-          <h1>Йога и движение<br /><em>для вашего тела</em></h1>
-          <div className="hero-bottom">
-            <p>Выберите подходящее занятие, узнайте стоимость и запишитесь в студию в Королёве.</p>
-            <nav className="hero-quick-links" aria-label="Быстрые переходы по сайту">
-              <a href="#directions">Занятия</a>
-              <a href="#massages">Массаж</a>
-              <a href="#offers">Абонементы</a>
-              <a href="#booking">Записаться</a>
-            </nav>
-          </div>
-        </div>
-        <div className="hero-info"><span>Дворцовый проезд, 8/14</span><span>Ежедневно · 07:00—22:00</span></div>
-      </section>
+    <section className="hero" id="top"><div className="hero-photo" role="img" aria-label="Фитнес-тренировка в светлой студии" /><div className="hero-shade" /><div className="hero-copy"><p className="eyebrow"><span /> Фитнес для всей семьи в Королёве</p><h1>Двигайтесь<br /><em>ввысь</em></h1><div className="hero-bottom"><p>Современная студия фитнеса и воздушной гимнастики. Групповые занятия, профессиональные тренеры и бережный подход к каждому телу.</p><nav className="hero-quick-links" aria-label="Быстрые переходы"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#about">О студии</a><a href="#booking">Записаться</a></nav></div></div><div className="hero-info"><span>Королёв · ул. Академика Легостаева, 8 · секция 9</span><span>Ежедневно · 15:00—21:00</span></div></section>
 
-      <section className="directions section" id="directions">
-        <div className="section-heading">
-          <h2>Какие занятия<br /><em>есть в студии</em></h2>
-          <p>Листайте карточки, сравнивайте направления и выбирайте подходящую нагрузку.</p>
-        </div>
-        <div className="rail-controls">
-          <span>Листайте карточки в сторону, чтобы увидеть все направления</span>
-        </div>
-        <div className="direction-grid">
-          {directions.map((item) => (
-            <article className="direction-card" key={item.title}>
-              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
-              <div className="card-body">
-                <div className="card-meta">
-                  <span className="pill">{item.duration}</span>
-                  <span className="pill">{item.group}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="directions section" id="adults"><div className="section-heading"><h2>Занятия<br /><em>для взрослых</em></h2><p>От спокойной йоги и пилатеса до функциональных и воздушных тренировок. На карточке указана цена знакомства, а полный прайс расположен сразу после направлений.</p></div><div className="rail-controls"><span>11 направлений · листайте карточки в сторону</span></div><div className="direction-grid">{adultDirections.map((item) => <DirectionCard item={item} key={item.title} />)}</div><div className="tariff-intro"><span>Два формата занятий</span><h3>Выберите, где проходит тренировка</h3><p>Базовый тариф действует для занятий на коврике и с обычным инвентарём. Воздушный — только для полотен и гамаков.</p></div><div className="price-panels" id="adult-prices"><TariffCard tariff={tariffs.basic} /><TariffCard tariff={tariffs.air} /></div></section>
 
-      <section className="formats section" id="formats">
-        <div className="format-heading"><div><h2>Как можно заниматься</h2><p>Выберите не только направление, но и удобный способ занятий.</p></div></div>
-        <div className="format-grid">
-          <article><span>До 8 человек</span><h3>В группе</h3><p>Регулярные занятия вместе с другими участниками по общему расписанию студии.</p></article>
-          <article><span>До 5 человек</span><h3>В мини-группе</h3><p>Больше внимания преподавателя: занятия в гамаках — до четырёх человек, фитнес — до пяти.</p></article>
-          <article><h3>Персонально</h3><p>Индивидуальная практика с преподавателем, выстроенная под ваши задачи и подготовку.</p></article>
-        </div>
-      </section>
+    <section className="kids-section section" id="kids"><div className="section-heading"><h2>Занятия<br /><em>для детей</em></h2><p>Воздушная гимнастика — отдельная детская программа, где сила, гибкость и координация развиваются через интерес к движению.</p></div><div className="kids-layout"><DirectionCard item={kidsDirections[0]} /><div id="kids-prices"><TariffCard tariff={tariffs.kids} /></div></div></section>
 
-      <section className="prices section" id="prices">
-        <div className="price-heading">
-          <div><h2>Сколько стоят<br /><em>занятия</em></h2></div>
-        </div>
-        <div className="price-strip">
-          <article className="price-main"><div><span className="price-kicker">Любое групповое занятие</span><h3>Разовое посещение</h3><p>Хатха-йога, аэройога, пилатес, стретчинг, здоровая спина и другие групповые направления.</p></div><strong>550 <small>₽</small></strong></article>
-          <article><span className="price-kicker">Персонально</span><h3>Индивидуальное занятие</h3><p>Точная стоимость зависит от выбранного направления.</p><strong>до 1 100 <small>₽</small></strong></article>
-          <article className="price-help"><span className="price-kicker">Помощь с выбором</span><h3>Уточнить направление</h3><p>Администратор подскажет подходящий формат и наличие места.</p><a className="price-phone-link" href="tel:+79309098882">Позвонить администратору <span className="link-arrow" aria-hidden="true">→</span></a></article>
-        </div>
-      </section>
+    <section className="formats section" id="formats"><div className="format-heading"><div><h2>Комфорт, который помогает остаться</h2><p>Понятный старт, внимание тренера и нагрузка, соответствующая вашей подготовке — и для взрослых, и для детей.</p></div></div><div className="format-grid"><article><h3>Групповые занятия</h3><span>До 8 человек</span><p>В зале достаточно пространства, а тренер видит технику каждого участника и помогает её скорректировать.</p></article><article><h3>Понятный старт</h3><span>Диагностика · 490 ₽</span><p>Определим ваши цели и предложим 2–3 направления. При покупке абонемента в тот же день стоимость диагностики вычитается.</p></article><article><h3>Тренер рядом</h3><span>5 специалистов</span><p>С вами работают инструкторы по фитнесу, пилатесу, йоге и воздушным направлениям с профильной подготовкой.</p></article></div></section>
 
-      <section className="massages section" id="massages">
-        <div className="section-heading">
-          <h2>Виды массажа<br /><em>в студии</em></h2>
-          <p>Выберите подходящий формат восстановления и уточните удобное время у администратора.</p>
-        </div>
-        <div className="rail-controls">
-          <span>Листайте карточки в сторону, чтобы увидеть все виды массажа</span>
-        </div>
-        <div className="direction-grid">
-          {massages.map((item) => (
-            <article className="direction-card" key={item.title}>
-              <div className="card-photo" style={{ backgroundImage: `url(${item.image})` }} />
-              <div className="card-body">
-                <div className="card-meta"><span className="pill">{item.duration}</span></div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="studio-story" id="about"><div className="story-photo" role="img" aria-label="Светлый зал студии фитнеса" /><div className="story-copy"><h2>Пространство, где хочется заниматься</h2><p className="story-lead">Большой светлый зал, новый инвентарь и профессиональные инструкторы с подтверждённой квалификацией.</p><p>Без переполненного зала и постороннего шума. Здесь замечают ваш прогресс, поддерживают, когда трудно, и помогают тренироваться безопасно.</p><p><strong>Рейтинг 5,0 на Яндекс Картах</strong></p></div></section>
 
-      <section className="prices massage-prices section" id="massage-prices">
-        <div className="price-heading">
-          <div><h2>Стоимость<br /><em>массажа</em></h2></div>
-        </div>
-        <div className="price-strip massage-price-strip">
-          <article><span className="price-kicker">Короткий сеанс</span><h3>30 минут</h3><p>Для воротниковой зоны, спины или стоп.</p><strong>от 1 200 <small>₽</small></strong></article>
-          <article className="price-main"><div><span className="price-kicker">Основной формат</span><h3>60 минут</h3><p>Общий спортивный, relax-массаж и другие программы.</p></div><strong>от 2 000 <small>₽</small></strong></article>
-          <article><span className="price-kicker">Глубокое расслабление</span><h3>90 минут</h3><p>Продолжительный сеанс, включая тайский массаж.</p><strong>от 2 800 <small>₽</small></strong></article>
-        </div>
+    <section className="pause-section"><div className="pause-copy"><p className="eyebrow"><span /> Сильнее с каждым занятием</p><h2>Ваше тело<br />может <em>больше</em></h2></div><blockquote>«Тренировки остаются и эффективными, и комфортными — хочется продолжать»</blockquote></section>
 
-        <div className="membership-head" id="offers"><div><span>Специальные предложения</span><h3>Абонементы на месяц</h3></div></div>
-        <div className="membership-grid">
-          <article><span>Лёгкий старт</span><h3>8 занятий</h3><strong>7 200 ₽</strong><p>900 ₽ за одно посещение</p></article>
-          <article className="popular"><span>В ритме</span><h3>12 занятий</h3><strong>9 900 ₽</strong><p>825 ₽ за одно посещение</p></article>
-          <article><span>Регулярная практика</span><h3>16 занятий</h3><strong>12 400 ₽</strong><p>775 ₽ за одно посещение</p></article>
-        </div>
-        <div className="gift-banner"><div><span>Подарок с заботой</span><h3>Подарочный сертификат</h3><p>На занятие, абонемент или массаж — сумма и оформление по согласованию со студией.</p></div><a href="tel:+79309098882">Уточнить <span className="link-arrow" aria-hidden="true">→</span></a></div>
-      </section>
+    <section className="booking section" id="booking"><div className="booking-copy"><h2>Первый шаг —<br /><em>просто попробовать</em></h2><p>Позвоните или напишите администратору. Вам помогут выбрать направление, уточнят расписание и запишут на пробное занятие.</p></div><div className="booking-phone-card"><span>Студия «Ввысь»</span><a href={`tel:${phone}`}>+7 980 421-90-92</a><p>Ежедневно · 15:00—21:00</p><a className="call-button" href={`https://wa.me/${phone.slice(1)}`} target="_blank" rel="noreferrer">Написать в WhatsApp <span className="link-arrow" aria-hidden="true">→</span></a></div></section>
 
-      <section className="studio-story" id="about">
-        <div className="story-photo" role="img" aria-label="Светлое спокойное пространство для занятий йогой" />
-        <div className="story-copy">
-          <h2>Студия для начинающих<br />и опытных учеников</h2>
-          <p className="story-lead">В «Вдохновении в пути» можно заниматься йогой, пилатесом, фитнесом и растяжкой, попробовать практики в гамаках или записаться на массаж.</p>
-          <p>Если вы не знаете, что выбрать, администратор поможет подобрать занятие по цели, уровню подготовки и удобному формату.</p>
-        </div>
-      </section>
-
-      <section className="pause-section">
-        <div className="pause-copy"><p className="eyebrow"><span /> Время для себя</p><h2>Иногда нужно<br />просто <em>остановиться</em></h2></div>
-        <blockquote>«После практики мир остаётся прежним. Но вы смотрите на него уже иначе»</blockquote>
-      </section>
-
-      <section className="booking section" id="booking">
-        <div className="booking-copy">
-          <h2>Ваш путь может<br />начаться <em>сегодня</em></h2>
-          <p>Позвоните администратору — вам помогут выбрать подходящую практику, уточнят расписание и наличие места.</p>
-        </div>
-        <div className="booking-phone-card">
-          <span>Администратор студии</span>
-          <a href="tel:+79309098882">+7 930 909-88-82</a>
-          <p>Ежедневно · 07:00—22:00</p>
-          <a className="call-button" href="tel:+79309098882">Позвонить администратору <span className="link-arrow" aria-hidden="true">→</span></a>
-        </div>
-      </section>
-
-      <footer id="contacts">
-        <div className="footer-top">
-          <a className="brand footer-brand" href="#top"><span className="brand-mark">В</span><span>вдохновение<br />в пути</span></a>
-          <h2>До встречи<br />на <em>коврике</em></h2>
-          <div className="footer-contacts">
-            <p>Королёв<br />Дворцовый проезд, 8/14</p>
-            <a href="tel:+79309098882">+7 930 909-88-82</a>
-            <a target="_blank" rel="noreferrer" href="https://yandex.ru/maps/org/vdokhnoveniye_v_puti/13801819850?si=h9gh1zbyxezk9ynxwa45vchxzm">Открыть на карте <span className="link-arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-        <div className="footer-bottom"><span>© 2026 Вдохновение в пути</span><span>Демонстрационная версия сайта</span><a href="#top">Наверх ↑</a></div>
-      </footer>
-    </main>
-  );
+    <footer id="contacts"><div className="footer-top"><a className="brand footer-brand" href="#top"><span className="brand-mark">В</span><span>студия<br />Ввысь</span></a><h2>До встречи<br /><em>на тренировке</em></h2><div className="footer-contacts"><p>Московская область, Королёв<br />ул. Академика Легостаева, 8, секция 9</p><a className="footer-phone" href={`tel:${phone}`}>+7 980 421-90-92</a><div className="footer-links"><a href="https://t.me/upfitstudiokorolev" target="_blank" rel="noreferrer"><span>Telegram</span><span aria-hidden="true">↗</span></a><a href="https://vk.com/upfitstudio" target="_blank" rel="noreferrer"><span>ВКонтакте</span><span aria-hidden="true">↗</span></a><a href={mapUrl} target="_blank" rel="noreferrer"><span>Открыть на карте</span><span aria-hidden="true">→</span></a></div></div></div><div className="footer-bottom"><span>© 2026 Студия «Ввысь»</span><span>Демонстрационная версия сайта</span><a href="#top">Наверх ↑</a></div></footer>
+  </main>;
 }
