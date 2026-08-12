@@ -30,8 +30,8 @@
 1. Склонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/MikhailStand/teststudio.git
-   cd teststudio
+   git clone https://github.com/MikhailStand/vdohnovenie_v_puti.git
+   cd vdohnovenie_v_puti
    ```
 
 2. Установите зависимости:
@@ -90,7 +90,7 @@ git push
 
 Для проекта настроена автоматическая публикация через GitHub Pages. После каждого `git push` GitHub собирает сайт и обновляет публичную страницу:
 
-<https://mikhailstand.github.io/teststudio/>
+<https://mikhailstand.github.io/vdohnovenie_v_puti/>
 
 При первом запуске нужно один раз открыть в репозитории `Settings` → `Pages` и в разделе `Build and deployment` выбрать `GitHub Actions`. Затем открыть вкладку `Actions` и дождаться завершения процесса «Публикация сайта на GitHub Pages».
 
