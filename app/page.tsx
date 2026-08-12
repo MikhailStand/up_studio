@@ -160,8 +160,8 @@ export default function Home() {
         <nav aria-label="Основная навигация">
           <a href="#directions">Занятия</a>
           <a href="#massages">Массаж</a>
-          <a href="#prices">Цены</a>
           <a href="#offers">Абонементы</a>
+          <a href="#booking">Записаться</a>
         </nav>
         <div className="nav-actions">
           <a className="nav-button" href="tel:+79309098882">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a>
