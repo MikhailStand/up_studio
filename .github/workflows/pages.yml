@@ -38,6 +38,8 @@ jobs:
 
       - name: Подготовить GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Загрузить сайт
         uses: actions/upload-pages-artifact@v3
