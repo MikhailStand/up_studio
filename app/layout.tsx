@@ -6,8 +6,11 @@ export const metadata: Metadata = {
   title: "Ввысь — студия фитнеса и воздушной гимнастики в Королёве",
   description: "Фитнес, йога, пилатес, стретчинг и воздушная гимнастика для детей и взрослых в мини-группах.",
   icons: {
-    icon: [{ url: "/favicon-vvys-v3.png", type: "image/png", sizes: "512x512" }],
-    shortcut: "/favicon-vvys-v3.png",
+    icon: [
+      { url: "/favicon-vvys-v4.ico", type: "image/x-icon", sizes: "any" },
+      { url: "/favicon-vvys-v3.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon-vvys-v4.ico",
     apple: [{ url: "/favicon-vvys-v3.png", sizes: "512x512", type: "image/png" }],
   },
   openGraph: {
