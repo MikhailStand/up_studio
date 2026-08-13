@@ -31,7 +31,7 @@ const withBasePath = (text) =>
     .replaceAll('"/_next/', '"/up_studio/_next/')
     .replaceAll("'/_next/", "'/up_studio/_next/")
     .replaceAll("`/_next/", "`/up_studio/_next/")
-    .replaceAll('href="/favicon-vvys-v2.png"', 'href="/up_studio/favicon-vvys-v2.png"');
+    .replaceAll("/favicon-vvys-v3.png", "/up_studio/favicon-vvys-v3.png");
 
 await writeFile(
   new URL("index.html", outputDirectory),
