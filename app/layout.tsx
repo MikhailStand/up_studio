@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Фитнес, йога, пилатес, стретчинг и воздушная гимнастика для детей и взрослых в мини-группах.",
   icons: {
     icon: [
+      { url: "/favicon-vvys-safari-v5.svg", type: "image/svg+xml", sizes: "any" },
       { url: "/favicon-vvys-v4.ico", type: "image/x-icon", sizes: "any" },
       { url: "/favicon-vvys-v3.png", type: "image/png", sizes: "512x512" },
     ],
@@ -30,5 +31,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru"><body>{children}</body></html>;
+  return <html lang="ru"><head><link rel="mask-icon" href="/favicon-vvys-safari-v5.svg" color="#123f36" /></head><body>{children}</body></html>;
 }

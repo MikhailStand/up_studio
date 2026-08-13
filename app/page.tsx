@@ -58,11 +58,11 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const faviconUrl = "/favicon-vvys-v4.ico?v=4";
+    const faviconUrl = "/favicon-vvys-safari-v5.svg?v=5";
     document.querySelectorAll<HTMLLinkElement>('link[rel*="icon"]').forEach((link) => link.remove());
     const favicon = document.createElement("link");
     favicon.rel = "icon";
-    favicon.type = "image/x-icon";
+    favicon.type = "image/svg+xml";
     favicon.href = faviconUrl;
     document.head.appendChild(favicon);
   }, []);
