@@ -58,7 +58,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const faviconUrl = "/up_studio/favicon-vvys-v4.ico?v=4";
+    const faviconUrl = "/favicon-vvys-v4.ico?v=4";
     document.querySelectorAll<HTMLLinkElement>('link[rel*="icon"]').forEach((link) => link.remove());
     const favicon = document.createElement("link");
     favicon.rel = "icon";
