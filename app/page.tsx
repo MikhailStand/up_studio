@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const phone = "+79804219092";
 const mapUrl = "https://yandex.ru/maps/org/vvys/156108342252?si=h9gh1zbyxezk9ynxwa45vchxzm";
@@ -56,6 +56,16 @@ function TariffCard({ tariff }: { tariff: typeof tariffs.basic }) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const faviconUrl = "/up_studio/favicon-vvys-v4.ico?v=4";
+    document.querySelectorAll<HTMLLinkElement>('link[rel*="icon"]').forEach((link) => link.remove());
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/x-icon";
+    favicon.href = faviconUrl;
+    document.head.appendChild(favicon);
+  }, []);
   const closeMenu = () => setMenuOpen(false);
 
   return <main>
