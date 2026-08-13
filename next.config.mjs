@@ -4,8 +4,8 @@ export default {
   ...(isGitHubPages
     ? {
         output: "export",
-        basePath: "/vvis_studio",
-        assetPrefix: "/vvis_studio/",
+        basePath: "/up_studio",
+        assetPrefix: "/up_studio/",
         trailingSlash: true,
       }
     : {}),

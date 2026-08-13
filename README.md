@@ -15,8 +15,8 @@
 Понадобится Node.js 22.13 или новее.
 
 ```bash
-git clone https://github.com/MikhailStand/vvis_studio.git
-cd vvis_studio
+git clone https://github.com/MikhailStand/up_studio.git
+cd up_studio
 npm install
 npm run dev
 ```
@@ -50,7 +50,7 @@ npm run build:pages
 
 Адрес проекта:
 
-<https://mikhailstand.github.io/vvis_studio/>
+<https://mikhailstand.github.io/up_studio/>
 
 ## Контакты студии
 

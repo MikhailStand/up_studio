@@ -28,11 +28,11 @@ if (!response.ok) {
 
 const withBasePath = (text) =>
   text
-    .replaceAll('"/_next/', '"/vvis_studio/_next/')
-    .replaceAll("'/_next/", "'/vvis_studio/_next/")
-    .replaceAll("`/_next/", "`/vvis_studio/_next/")
-    .replaceAll('href="/favicon.svg"', 'href="/vvis_studio/favicon.svg"')
-    .replaceAll('content="/og-v21.png"', 'content="/vvis_studio/og-v21.png"');
+    .replaceAll('"/_next/', '"/up_studio/_next/')
+    .replaceAll("'/_next/", "'/up_studio/_next/")
+    .replaceAll("`/_next/", "`/up_studio/_next/")
+    .replaceAll('href="/favicon.svg"', 'href="/up_studio/favicon.svg"')
+    .replaceAll('content="/og-v21.png"', 'content="/up_studio/og-v21.png"');
 
 await writeFile(
   new URL("index.html", outputDirectory),
