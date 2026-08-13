@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mikhailstand.github.io/up_studio/"),
   title: "Ввысь — студия фитнеса и воздушной гимнастики в Королёве",
   description: "Фитнес, йога, пилатес, стретчинг и воздушная гимнастика для детей и взрослых в мини-группах.",
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: [{ url: "/favicon-vvys.png", type: "image/png", sizes: "512x512" }],
+    shortcut: "/favicon-vvys.png",
+    apple: [{ url: "/favicon-vvys.png", sizes: "512x512", type: "image/png" }],
+  },
   openGraph: {
     title: "Ввысь — фитнес для взрослых и детей",
     description: "Фитнес, йога, пилатес и воздушная гимнастика в Королёве",
