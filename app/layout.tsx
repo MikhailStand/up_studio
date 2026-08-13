@@ -7,17 +7,18 @@ export const metadata: Metadata = {
   description: "Фитнес, йога, пилатес, стретчинг и воздушная гимнастика для детей и взрослых в мини-группах.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Ввысь — фитнес для всей семьи",
-    description: "Современная студия фитнеса и воздушной гимнастики в Королёве",
+    title: "Ввысь — фитнес для взрослых и детей",
+    description: "Фитнес, йога, пилатес и воздушная гимнастика в Королёве",
     type: "website",
     locale: "ru_RU",
-    images: [{ url: "https://mikhailstand.github.io/up_studio/og-v21.png", width: 1536, height: 910, alt: "Студия Ввысь — фитнес для детей и взрослых" }],
+    siteName: "Студия «Ввысь»",
+    images: [{ url: "https://mikhailstand.github.io/up_studio/og-vvys-v1.png", width: 1732, height: 908, alt: "Студия Ввысь — фитнес для взрослых и детей в Королёве" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ввысь — фитнес для всей семьи",
-    description: "Фитнес и воздушная гимнастика в Королёве",
-    images: ["https://mikhailstand.github.io/up_studio/og-v21.png"],
+    title: "Ввысь — фитнес для взрослых и детей",
+    description: "Фитнес, йога, пилатес и воздушная гимнастика в Королёве",
+    images: ["https://mikhailstand.github.io/up_studio/og-vvys-v1.png"],
   },
 };
 
