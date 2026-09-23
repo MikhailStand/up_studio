@@ -16,8 +16,8 @@ export function SocialLinks({ intro = false }: { intro?: boolean }) {
 
 export function MorningSection() {
   return <section className="morning-section section" id="schedule">
-    <div><p className="section-kicker">В вашем ритме</p><h2>Расписание<br /><em>занятий</em></h2><p>Начните день с тренировки или переключитесь после работы. В студии есть утренние, дневные и вечерние группы для взрослых и детей.</p><a className="action-link" href={scheduleUrl} target="_blank" rel="noreferrer">Открыть расписание <span aria-hidden="true">↗</span></a></div>
-    <div className="schedule-options"><article><span className="time-symbol" aria-hidden="true">☀</span><div><h3>Утренние занятия</h3><strong>10:00–13:00</strong><p>Пилатес, растяжка и умный фитнес — время для себя до основных дел.</p></div></article><article><span className="time-symbol" aria-hidden="true">☾</span><div><h3>Вечерние занятия</h3><strong>После работы</strong><p>Йога, пилатес, TRX и воздушные направления. Выберите удобное время в расписании.</p></div></article><p className="supporting-note">Дни, точное время и свободные места обновляются в системе записи.</p></div>
+    <div><p className="section-kicker">Выберите удобное время</p><h2>Утренние<br />и дневные <em>занятия</em></h2><p>Для тех, кому удобно тренироваться в первой половине дня. Вечерние группы тоже есть — выбирайте свой ритм.</p></div>
+    <div className="schedule-options"><p className="schedule-lead">Ваше время для движения</p><p>Дни занятий, точное время, тренеры и свободные места — в актуальном расписании студии.</p><a className="action-link" href={scheduleUrl} target="_blank" rel="noreferrer">Открыть расписание <span aria-hidden="true">↗</span></a></div>
   </section>;
 }
 
@@ -46,5 +46,8 @@ export function ReviewsSection() {
 }
 
 export function LocationSection() {
-  return <section className="location-section section" id="location"><div className="location-copy"><p className="section-kicker">Рядом с вами</p><h2>Контакты<br /><em>и адрес</em></h2><p className="location-address">Королёв, ул. Академика Легостаева, 8<br />Секция 9</p><p>Есть утренние занятия с 10:00 до 13:00 и вечерние группы. Точное время — в расписании.</p><a className="action-link" href="https://yandex.ru/maps/org/vvys/156108342252/" target="_blank" rel="noreferrer">Открыть карту и маршрут <span aria-hidden="true">↗</span></a><SocialLinks /></div><iframe className="location-map" title="Студия Ввысь — Королёв, улица Академика Легостаева, 8" src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=156108342252" loading="lazy" allowFullScreen /></section>;
+  return <section className="contact-hub section" id="booking">
+    <div className="contact-hub-copy"><p className="section-kicker">Студия «Ввысь» · Королёв</p><h2>Запись<br /><em>и контакты</em></h2><p>Выберите занятие в расписании или напишите нам — поможем найти направление для вас и вашей семьи.</p><a className="contact-phone" href="tel:+79804219092">+7 980 421-90-92</a><a className="action-link contact-book" href={scheduleUrl} target="_blank" rel="noreferrer">Расписание и запись <span aria-hidden="true">↗</span></a><SocialLinks /></div>
+    <div className="contact-hub-location" id="location"><div className="contact-address-row"><div><h3>Как нас найти</h3><p>Королёв, ул. Академика Легостаева, 8<br />Секция 9</p></div><a className="map-directions" href="https://yandex.ru/maps/org/vvys/156108342252/" target="_blank" rel="noreferrer">Маршрут ↗</a></div><iframe className="location-map" title="Студия Ввысь — Королёв, улица Академика Легостаева, 8" src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=156108342252" loading="lazy" allowFullScreen /></div>
+  </section>;
 }
