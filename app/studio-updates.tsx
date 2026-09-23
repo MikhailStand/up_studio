@@ -7,7 +7,6 @@ export function SocialLinks() {
     <a href="https://t.me/upfitstudiokorolev" target="_blank" rel="noreferrer">Telegram ↗</a>
     <a href="https://vk.com/upfitstudio" target="_blank" rel="noreferrer">ВКонтакте ↗</a>
     <a href={messageUrl} target="_blank" rel="noreferrer">WhatsApp ↗</a>
-    <a href="https://max.ru/+7(980)421-90-92" target="_blank" rel="noreferrer">MAX ↗</a>
   </div>;
 }
 
