@@ -129,72 +129,57 @@ footer { background:#102e28;color:white;padding:90px 7.5vw 25px; }.footer-top{di
 @media(max-width:520px){.section{padding:68px 24px}.format-grid article{min-height:210px}.pause-section{min-height:520px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-photo{animation:none}.direction-card,.schedule-row{transition:none}}
 
-/* Schedule, offers and social proof keep the original editorial palette. */
-html{scroll-padding-top:100px}
-a:focus-visible,button:focus-visible{outline:3px solid #c77f5b;outline-offset:5px}
-.nav-wrap nav{gap:22px;font-size:14px;letter-spacing:0}
-.nav-wrap nav a{min-height:44px;display:flex;align-items:center}
-.nav-button{min-height:48px;align-items:center;font-size:14px}
-.hero{min-height:860px}
-.hero-copy{top:17%}
-.hero-bottom p,.section-heading>p:last-child,.card-body p,.tariff-title p,.format-grid p,.format-heading>div>p,.footer-contacts{font-size:16px;line-height:1.65}
-.hero-quick-links a{font-size:14px;letter-spacing:0;text-transform:none;min-height:52px}
-.hero-morning{display:flex;align-items:center;gap:18px;flex-wrap:wrap;width:fit-content;padding:14px 0;font-size:17px;border-bottom:1px solid #ffffff70}
-.hero-morning strong{font-size:23px;color:#f5c5a6;white-space:nowrap}
-.hero-info{font-size:14px;letter-spacing:0;text-transform:none;gap:20px}
-.tariff-list div{font-size:16px;line-height:1.4}
-.price-panels>.tariff-card{grid-template-columns:1fr;gap:28px}
-.pill,.card-price span{font-size:12px;letter-spacing:.03em}
-.rail-controls{font-size:14px;letter-spacing:0;text-transform:none}
-.morning-section,.family-section,.reviews-section,.location-section{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center}
-.morning-section{background:#e8b397}
-.section-kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 24px;font-weight:600}
-.morning-section h2,.family-section h2,.reviews-section h2,.location-section h2{font-size:clamp(44px,5vw,76px);line-height:1.04}
-.morning-section em{color:var(--ink)}
-.morning-section p:not(.section-kicker),.family-copy p,.reviews-copy>p:not(.section-kicker),.location-copy>p:not(.section-kicker){font-size:17px;line-height:1.65;max-width:560px}
-.morning-time{border-left:1px solid #173d3540;padding-left:5vw}
-.morning-time>strong{font-size:clamp(36px,4.4vw,68px);line-height:1.15;letter-spacing:-.055em;white-space:nowrap}
-.action-link{display:flex;justify-content:space-between;align-items:center;gap:22px;min-height:56px;padding:17px 23px;background:var(--ink);color:white;font-size:16px;line-height:1.35;font-weight:600;transition:background .2s;max-width:100%;border:1px solid transparent}
-.action-link:hover{background:#245247}
-.action-link>span{flex-shrink:0;font-size:22px}
-.action-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
-.action-outline:hover{background:#173d3510}
-.supporting-note{display:block;font-size:14px!important;line-height:1.6;margin:16px 0 0;max-width:60ch}
-.family-section{background:var(--ink);color:white;align-items:start}
-.family-copy .large-copy{font-size:27px;line-height:1.35;margin-top:0}
-.family-details{display:flex;flex-wrap:wrap;gap:16px;padding:22px 0 30px;font-size:16px}
-.family-details span{border-bottom:1px solid #ffffff50;padding-bottom:10px}
-.family-copy .action-link{background:var(--peach);color:#102e28}
-.family-copy .action-link:hover{background:#e8b397}
-.offers-section{background:#f5f0e7}
-.offers-section .section-heading h2{font-size:clamp(44px,5.5vw,80px);line-height:1.02}
-.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
-.offers-grid article{padding:42px;background:#e8e7db;display:flex;flex-direction:column;align-items:flex-start}
-.offers-grid .offer-featured{background:#ead3c1}
-.offers-grid h3{font-size:clamp(27px,3vw,42px);line-height:1.15;letter-spacing:-.035em;margin:0 0 24px;font-weight:500}
-.offers-grid strong{font-size:52px;line-height:1.1;letter-spacing:-.05em}
-.offers-grid p{font-size:17px;line-height:1.65;margin:24px 0 30px}
-.offers-grid .action-link{margin-top:auto;align-self:stretch}
+/* Additions are scoped so the original hero, classes and tariffs keep their design. */
+.action-link{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:56px;padding:17px 24px;border:1px solid transparent;border-radius:14px;background:var(--ink);color:#fff;font-size:16px;font-weight:500;line-height:1.4;transition:background .2s,transform .2s}
+.action-link>span{font-size:22px;flex-shrink:0}
+.action-outline{background:transparent;color:var(--ink);border-color:#173d3540}
+.action-link:focus-visible,.social-actions a:focus-visible{outline:3px solid var(--peach);outline-offset:4px}
+.section-kicker{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 0 22px}
+.supporting-note{display:block;font-size:14px!important;line-height:1.65;margin:18px 0 0;max-width:65ch}
+.social-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.social-actions a{display:flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 18px;background:#fbf8f2;color:var(--ink);border:1px solid #173d3520;border-radius:14px;font-size:15px;font-weight:500;line-height:1.4;transition:background .2s,transform .2s}
+.social-actions svg{flex-shrink:0}
+.social-telegram svg{color:#229ed9}.social-vk svg{color:#0077ff}.social-whatsapp svg{color:#239b66}
+.studio-social-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 7.5vw;background:#f5f0e7;border-bottom:1px solid var(--line)}
+.studio-social-strip>span{font-size:16px;line-height:1.5}.studio-social-strip .social-actions{margin:0}
+.morning-section,.family-section,.reviews-section,.location-section,.gift-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7vw;align-items:center}
+.morning-section h2,.family-section h2,.reviews-section h2,.location-section h2,.gift-section h2,.offers-section .section-heading h2{font-size:clamp(44px,5.2vw,76px);line-height:1.04}
+.morning-section p:not(.section-kicker),.family-copy p,.reviews-copy>p:not(.section-kicker),.location-copy>p:not(.section-kicker),.gift-copy>p:not(.section-kicker){font-size:17px;line-height:1.7;max-width:560px}
+.morning-section{background:#f5f0e7}.morning-section em{color:#b67450}.morning-section .action-link{width:fit-content;min-width:260px;margin-top:28px}
+.schedule-options article{display:flex;gap:24px;padding:30px 0;border-bottom:1px solid var(--line)}.schedule-options article:first-child{padding-top:0}
+.time-symbol{font-size:40px;color:#b67450;line-height:1.3;width:40px;flex-shrink:0}
+.schedule-options h3{font-size:21px;font-weight:500;margin:0 0 10px}
+.schedule-options strong{font-size:clamp(27px,3vw,40px);font-weight:500;letter-spacing:-.04em}
+.schedule-options article p{font-size:16px!important;line-height:1.65;margin:14px 0 0}
+.offers-section{background:#e8e7db}.offers-section .section-heading>p{font-size:17px;line-height:1.7}
+.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.offers-grid article{padding:38px;background:#f8f4ed;display:flex;flex-direction:column;align-items:flex-start;border-radius:20px}
+.offers-grid .offer-featured{background:#eed6c4}
+.offer-featured .section-kicker{padding:8px 13px;border-radius:7px;background:var(--ink);color:white;font-size:12px}
+.offers-grid h3{font-size:32px;line-height:1.18;font-weight:500;letter-spacing:-.035em;margin:0 0 24px}
+.offers-grid strong{font-size:58px;line-height:1.1;font-weight:500;letter-spacing:-.05em}
+.offers-grid p{font-size:17px;line-height:1.65;margin:24px 0 30px}.offers-grid .action-link{margin-top:auto;align-self:stretch}
+.family-offer{padding:44px;margin-top:24px;gap:6vw;align-items:center;background:var(--ink);color:white;border-radius:20px}
+.family-offer h2{font-size:clamp(42px,4.5vw,64px)}.family-caption{font-size:21px;line-height:1.5;color:#e9ddd0;margin:24px 0 0}
+.family-copy .large-copy{font-size:23px;line-height:1.45;margin-top:0}
+.family-details{display:flex;flex-wrap:wrap;gap:18px;padding:14px 0 28px;font-size:15px}.family-details span{padding-bottom:10px;border-bottom:1px solid #ffffff40}
+.family-copy .action-link{background:var(--peach);color:#102e28;width:fit-content}
 .offer-note a{text-decoration:underline;text-underline-offset:3px}
-.reviews-section{background:#e8e7db;align-items:start}
-.rating-summary{display:flex;gap:24px;align-items:center;margin:30px 0}
-.rating-summary>strong{font-size:90px;line-height:1;letter-spacing:-.07em}
-.rating-summary>div{display:flex;flex-direction:column;gap:8px;font-size:16px}
-.rating-stars{font-size:26px;letter-spacing:3px;color:#a85530}
-.reviews-widget{min-width:0;background:white;padding:12px;border-radius:20px;overflow:hidden}
-.reviews-widget iframe{display:block;border:0;width:100%;height:720px;border-radius:12px}
-.reviews-widget>a{display:block;padding:14px;font-size:14px;text-decoration:underline}
-.pause-action{align-self:flex-end;width:min(360px,100%);background:var(--peach);color:#102e28}
-.social-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px;max-width:520px}
-.social-actions a{display:flex;align-items:center;justify-content:space-between;min-height:52px;border:1px solid currentColor;padding:13px 16px;font-size:16px;line-height:1.35}
-.social-actions a:hover{background:#9ba98b25}
-.booking-phone-card>p{font-size:16px;line-height:1.5;letter-spacing:0;text-transform:none;opacity:1}
-.call-button{font-size:16px;text-transform:none;letter-spacing:0;color:#102e28}
-.location-section{background:#f5f0e7}
-.location-copy .location-address{font-size:21px;font-weight:500;margin-top:30px}
-.location-map{width:100%;height:560px;border:0;background:#e8e7db}
-.footer-links a{font-size:16px;letter-spacing:0;text-transform:none;min-height:52px}
-.footer-bottom{font-size:12px}
-@media(max-width:1150px){.nav-wrap nav{gap:14px;font-size:13px}.morning-section,.family-section,.reviews-section,.location-section{gap:4vw}.family-section h2{font-size:clamp(42px,5vw,68px)}}
-@media(max-width:900px){.nav-wrap nav{display:none}.morning-section,.family-section,.reviews-section,.location-section{grid-template-columns:1fr;gap:36px}.morning-time{border-left:0;border-top:1px solid #173d3540;padding:28px 0 0}.hero-copy{top:16%}.offers-grid article{padding:28px}.reviews-widget{max-width:650px;width:100%}.location-map{height:450px}.family-copy .large-copy{font-size:24px}.hero-info{flex-wrap:wrap}.hero{min-height:820px}.hero-info a{min-height:32px}}
-@media(max-width:600px){.section{padding:64px 20px}.offers-grid{grid-template-columns:1fr}.hero-copy{left:20px;width:calc(100% - 40px);top:14%}.hero-morning{font-size:16px;gap:10px}.hero-morning strong{font-size:22px}.hero-bottom p{font-size:16px;line-height:1.55}.hero-quick-links a{font-size:14px}.hero-info{padding:16px 20px}.morning-time>strong{font-size:clamp(38px,10vw,58px)}.family-section h2{font-size:clamp(38px,10vw,52px)}.reviews-widget iframe{height:650px}.social-actions{gap:8px}.social-actions a{padding:13px 12px}.booking-phone-card{padding:28px 20px}.tariff-card{padding:24px}.direction-grid{margin-right:-20px;padding-right:20px}.location-map{height:400px}.card-body p{font-size:16px}.footer-bottom{line-height:1.5}.quick-menu-links a{font-size:22px}.pause-action{align-self:flex-start}.hero{height:auto;min-height:860px}}
+.gift-section{background:#f6f1e8}.gift-visual{min-height:490px;display:flex;align-items:center;justify-content:center;border-radius:24px;background:radial-gradient(ellipse at 50% 30%,#f5ded0,#e1ceba);padding:48px}
+.gift-card{width:100%;max-width:380px;aspect-ratio:4/5;background:#173d35;color:#f6f1e8;padding:34px;border-radius:16px;transform:rotate(-6deg);box-shadow:15px 22px 40px #173d3524;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;border:1px solid #ffffff30}
+.gift-card>span{font-size:12px;letter-spacing:.12em;line-height:1.5}.gift-card svg{width:76px;height:76px;color:#e8b397;align-self:flex-end}
+.gift-card strong{font:500 58px/.95 "Cormorant Garamond",serif;letter-spacing:-.035em;padding:20px 0}
+.gift-copy .action-link{width:fit-content;margin-top:30px;min-width:270px}
+.reviews-section{background:#e8e7db;align-items:start}.reviews-copy h2{margin-bottom:26px}
+.rating-summary{display:flex;gap:24px;align-items:center;margin:30px 0}.rating-summary>strong{font-size:90px;line-height:1;letter-spacing:-.07em}
+.rating-summary>div{display:flex;flex-direction:column;gap:8px;font-size:16px}.rating-stars{font-size:26px;letter-spacing:3px;color:#a85530}
+.reviews-widget{min-width:0;background:white;padding:12px;border-radius:20px;overflow:hidden}.reviews-widget iframe{display:block;width:100%;height:720px;border:0;border-radius:12px}
+.reviews-copy .action-link{margin-top:24px}.pause-action{align-self:flex-end;width:min(360px,100%);background:var(--peach);color:#102e28}
+.location-section{background:#f5f0e7}.location-copy .location-address{font-size:21px;font-weight:500;margin-top:30px}
+.location-map{width:100%;height:560px;border:0;border-radius:20px;background:#e8e7db}
+.booking .call-button{border-radius:14px;font-size:15px;letter-spacing:0;text-transform:none;color:#102e28}.booking-phone-card>p{font-size:15px;letter-spacing:0;text-transform:none;opacity:1}
+@media(hover:hover) and (pointer:fine){.action-link:hover{background:#245247;transform:translateY(-2px)}.action-outline:hover{background:#173d350c}.family-copy .action-link:hover,.pause-action:hover{background:#e8b397}.social-actions a:hover{background:#fff;transform:translateY(-2px)}}
+@media(max-width:1050px){.studio-social-strip{gap:18px}.studio-social-strip>span{max-width:280px}.family-offer{gap:32px;padding:34px}}
+@media(max-width:900px){.morning-section,.family-section,.reviews-section,.location-section,.gift-section{grid-template-columns:1fr;gap:38px}.studio-social-strip{padding:24px;flex-wrap:wrap}.gift-visual{min-height:0;padding:44px;order:2}.gift-card{max-width:310px}.family-copy .action-link{width:100%}.location-map{height:450px}.reviews-widget{max-width:650px;width:100%}}
+@media(max-width:600px){.morning-section,.offers-section,.gift-section,.reviews-section,.location-section{padding:64px 20px}.studio-social-strip{padding:22px 20px;gap:16px}.studio-social-strip>span{font-size:14px;max-width:none}.studio-social-strip .social-actions{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:10px}.studio-social-strip .social-actions a{font-size:13px;padding:12px 10px;gap:8px}.social-actions a{flex:1 1 125px}.morning-section h2,.reviews-section h2,.location-section h2,.offers-section .section-heading h2{font-size:46px}.schedule-options article{gap:16px}.time-symbol{width:30px;font-size:32px}.offers-grid{grid-template-columns:1fr}.offers-grid article{padding:30px 24px}.family-offer{padding:30px 24px;gap:28px}.family-offer h2{font-size:44px}.action-link{padding:16px 20px;font-size:15px}.gift-copy h2{font-size:42px}.gift-card{padding:26px}.gift-card strong{font-size:48px}.gift-visual{padding:36px}.gift-copy .action-link{width:100%;min-width:0}.reviews-widget iframe{height:650px}.location-map{height:400px}.pause-action{align-self:flex-start}}
+@media(prefers-reduced-motion:reduce){.action-link,.social-actions a{transition:none}.action-link:hover,.social-actions a:hover{transform:none}}
