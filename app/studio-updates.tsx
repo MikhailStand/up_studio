@@ -16,7 +16,7 @@ export function SocialLinks({ intro = false }: { intro?: boolean }) {
 
 export function MorningSection() {
   return <section className="morning-section section" id="schedule">
-    <div className="schedule-intro"><p className="section-kicker">Занятия в течение всего дня</p><h2>Тренируйтесь<br />в удобное <em>время</em></h2><p>Можно прийти утром, днём или после работы. Выберите привычный ритм — занятия есть до закрытия студии.</p></div>
+    <div className="schedule-intro"><p className="section-kicker">Занятия в течение всего дня</p><h2>Тренируйтесь<br /><em>в удобное время</em></h2><p>Можно прийти утром, днём или после работы. Выберите привычный ритм — занятия есть до закрытия студии.</p></div>
     <div className="schedule-panel">
       <article className="schedule-period"><div className="schedule-time"><span>Утро</span><strong><time>10:00</time><i>—</i><time>13:00</time></strong></div><div className="schedule-period-copy"><h3>Утренние занятия</h3><p>Спокойно начните день с тренировки и оставьте вечер свободным.</p></div></article>
       <article className="schedule-period"><div className="schedule-time"><span>День и вечер</span><strong><time>13:00</time><i>—</i><time>20:00</time></strong></div><div className="schedule-period-copy"><h3>Дневные и вечерние группы</h3><p>Занимайтесь в течение дня или после работы — вплоть до закрытия студии.</p></div></article>
@@ -27,8 +27,8 @@ export function MorningSection() {
 
 export function FamilySection() {
   return <section className="family-section family-offer" id="family">
-    <div className="family-heading"><p className="section-kicker">Для взрослых и детей</p><h2>Семейный<br /><em>тариф</em></h2><p className="family-caption">Одна студия.<br />Больше времени вместе.</p></div>
-    <div className="family-copy"><p className="large-copy">Занимайтесь всей семьёй в одной студии.</p><p>Для взрослых — фитнес, пилатес и растяжка. Для детей — воздушная гимнастика. Подберём занятия под интересы каждого и ваш семейный ритм.</p><div className="family-details"><span>Взрослым и детям</span><span>Направления на выбор</span></div><a className="action-link" href={`${messageUrl}?text=${encodeURIComponent("Здравствуйте! Расскажите, пожалуйста, об условиях и стоимости семейного тарифа.")}`} target="_blank" rel="noreferrer">Узнать условия семейного тарифа <span aria-hidden="true">↗</span></a><p className="supporting-note">Стоимость и условия уточните у администратора.</p></div>
+    <div className="family-heading"><p className="section-kicker">Для взрослых и детей</p><h2>Семейный<br /><em>тариф</em></h2><strong className="family-discount">−10%</strong><p className="family-caption">Одна студия.<br />Больше времени вместе.</p></div>
+    <div className="family-copy"><p className="large-copy">Занимайтесь всей семьёй в одной студии и получите скидку 10%.</p><p>Для взрослых — фитнес, пилатес и растяжка. Для детей — воздушная гимнастика. Подберём занятия под интересы каждого и ваш семейный ритм.</p><div className="family-details"><span>Скидка 10%</span><span>Взрослым и детям</span></div><a className="action-link" href={`${messageUrl}?text=${encodeURIComponent("Здравствуйте! Расскажите, пожалуйста, об условиях семейного тарифа со скидкой 10%.")}`} target="_blank" rel="noreferrer">Узнать условия семейного тарифа <span aria-hidden="true">↗</span></a><p className="supporting-note">Стоимость и условия скидки уточните у администратора.</p></div>
   </section>;
 }
 
