@@ -16,8 +16,12 @@ export function SocialLinks({ intro = false }: { intro?: boolean }) {
 
 export function MorningSection() {
   return <section className="morning-section section" id="schedule">
-    <div><p className="section-kicker">Выберите удобное время</p><h2>Утренние<br />и дневные <em>занятия</em></h2><p>Для тех, кому удобно тренироваться в первой половине дня. Вечерние группы тоже есть — выбирайте свой ритм.</p></div>
-    <div className="schedule-options"><p className="schedule-lead">Ваше время для движения</p><p>Дни занятий, точное время, тренеры и свободные места — в актуальном расписании студии.</p><a className="action-link" href={scheduleUrl} target="_blank" rel="noreferrer">Открыть расписание <span aria-hidden="true">↗</span></a></div>
+    <div className="schedule-intro"><p className="section-kicker">Занятия в течение всего дня</p><h2>Тренируйтесь<br />в удобное <em>время</em></h2><p>Можно прийти утром, днём или после работы. Выберите привычный ритм — занятия есть до закрытия студии.</p></div>
+    <div className="schedule-panel">
+      <article className="schedule-period"><div className="schedule-time"><span>Утро</span><strong><time>10:00</time><i>—</i><time>13:00</time></strong></div><div className="schedule-period-copy"><h3>Утренние занятия</h3><p>Спокойно начните день с тренировки и оставьте вечер свободным.</p></div></article>
+      <article className="schedule-period"><div className="schedule-time"><span>День и вечер</span><strong><time>13:00</time><i>—</i><time>20:00</time></strong></div><div className="schedule-period-copy"><h3>Дневные и вечерние группы</h3><p>Занимайтесь в течение дня или после работы — вплоть до закрытия студии.</p></div></article>
+      <div className="schedule-panel-footer"><p>Точное время, тренеры и свободные места — в актуальном расписании.</p><a className="action-link" href={scheduleUrl} target="_blank" rel="noreferrer">Смотреть расписание <span aria-hidden="true">↗</span></a></div>
+    </div>
   </section>;
 }
 
