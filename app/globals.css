@@ -250,3 +250,48 @@ main h2 em,main h3 em{color:#9e543c!important}
 @media(max-width:900px){.tariff-zone{margin:64px -24px 0;padding:72px 24px}.directions{padding-bottom:0}.family-offer{grid-template-columns:1fr}}
 @media(max-width:600px){.tariff-zone{margin:58px -24px 0;padding:64px 24px}.section-heading h2,.morning-section h2,.gift-copy h2,.reviews-copy h2,.contact-hub h2,.format-heading h2,.story-copy h2,.pause-copy h2{font-size:clamp(44px,13vw,54px)!important;line-height:.98!important}.family-discount{font-size:68px}}
 @media(max-width:1100px){.nav-wrap nav{display:none}.brand,.nav-actions{flex-shrink:0}}
+
+/* Viewport-fit compositions for common 1440–1500 × 720–800 screens. */
+.duo-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:24px}
+.duo-offers .offer-friend,.duo-offers .family-offer{grid-column:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start;min-height:390px;margin:0;padding:32px}
+.duo-offers .section-kicker{margin-bottom:14px}
+.duo-offers .offer-friend h3,.duo-offers .family-offer h2{font-size:clamp(44px,3.8vw,54px);line-height:.93!important;margin-bottom:16px}
+.duo-offers .offer-friend .friend-offer-title>strong,.duo-offers .family-discount{font-size:clamp(58px,5vw,72px);margin-top:18px}
+.duo-offers .friend-offer-copy .large-copy,.duo-offers .family-copy .large-copy{font-size:18px;line-height:1.45;margin:0 0 16px}
+.duo-offers .friend-offer-copy .offer-condition{padding:15px 0;font-size:14px;line-height:1.55}
+.duo-offers .family-caption{font-size:16px;line-height:1.45;margin-top:16px}
+.duo-offers .family-copy>p:not(.large-copy){font-size:15px;line-height:1.55;margin:0 0 12px}
+.duo-offers .family-details{gap:12px;padding:8px 0 16px;font-size:14px}
+.duo-offers .action-link{padding:14px 20px;min-height:54px;font-size:15px}
+.duo-offers .supporting-note{font-size:12px!important;margin-top:12px}
+
+.story-copy h2 span,.story-copy h2 em,.format-heading h2 span,.format-heading h2 em,.gift-copy h2 span,.gift-copy h2 em{display:block;white-space:nowrap}
+.story-copy h2{font-size:clamp(48px,4.5vw,66px)!important;line-height:.96!important}
+
+@media(min-width:1201px){
+  .morning-section{grid-template-columns:minmax(390px,.8fr) minmax(650px,1.2fr);gap:5vw;min-height:calc(100svh - 88px);padding-top:54px;padding-bottom:54px}
+  .morning-section h2{font-size:clamp(60px,5.2vw,76px)!important;line-height:.93!important}
+  .schedule-intro>p:last-child{margin-top:18px;line-height:1.6}
+  .schedule-panel{padding:4px 28px 26px}
+  .schedule-period{grid-template-columns:240px minmax(0,1fr);gap:24px;padding:22px 0}
+  .schedule-time strong{font-size:32px}
+  .schedule-panel-footer{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:24px;align-items:center;padding-top:22px}
+  .schedule-panel-footer>p{margin:0}
+}
+
+@media(min-width:901px){
+  .gift-section{min-height:calc(100svh - 88px);padding-top:64px;padding-bottom:64px;grid-template-columns:.9fr 1.1fr;gap:5vw}
+  .gift-visual{min-height:420px;padding:38px}
+  .gift-copy h2{font-size:clamp(52px,5vw,72px)!important;line-height:.93!important}
+  .gift-copy>p{margin:14px 0;line-height:1.6}
+  .gift-copy .action-link{margin-top:22px}
+  .story-copy{padding-top:70px;padding-bottom:70px}
+  .reviews-section{min-height:calc(100svh - 88px);padding-top:54px;padding-bottom:54px;gap:5vw;align-items:center}
+  .reviews-copy h2{font-size:clamp(58px,5.2vw,74px)!important}
+  .rating-summary{margin:20px 0}.rating-summary>strong{font-size:72px}.rating-summary>div{gap:5px}.rating-stars{font-size:22px}
+  .reviews-copy .action-link{margin-top:18px}.reviews-copy .supporting-note{margin-top:12px}
+  .reviews-widget iframe{height:min(590px,calc(100svh - 150px));min-height:500px}
+}
+
+@media(max-width:1200px){.duo-offers{grid-template-columns:1fr}.duo-offers .offer-friend,.duo-offers .family-offer{min-height:0}}
+@media(max-width:700px){.duo-offers .offer-friend,.duo-offers .family-offer{grid-template-columns:1fr;padding:28px 24px}.schedule-panel-footer{display:block}.story-copy h2,.format-heading h2{font-size:clamp(38px,10.4vw,42px)!important}.gift-copy h2{font-size:clamp(40px,11vw,46px)!important}}
