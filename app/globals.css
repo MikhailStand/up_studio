@@ -295,3 +295,21 @@ main h2 em,main h3 em{color:#9e543c!important}
 
 @media(max-width:1200px){.duo-offers{grid-template-columns:1fr}.duo-offers .offer-friend,.duo-offers .family-offer{min-height:0}}
 @media(max-width:700px){.duo-offers .offer-friend,.duo-offers .family-offer{grid-template-columns:1fr;padding:28px 24px}.schedule-panel-footer{display:block}.story-copy h2,.format-heading h2{font-size:clamp(38px,10.4vw,42px)!important}.gift-copy h2{font-size:clamp(40px,11vw,46px)!important}}
+
+/* Deliberate desktop hover feedback for the highlighted controls and cards. */
+.tariff-card,.format-grid article{position:relative;transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,background-color .28s ease;transform-origin:center}
+.schedule-panel .action-link,.duo-offers .offer-friend .action-link,.duo-offers .family-offer .action-link{transition:background-color .22s ease,color .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+
+@media(hover:hover) and (pointer:fine){
+  .schedule-panel .action-link:hover,.duo-offers .offer-friend .action-link:hover,.duo-offers .family-offer .action-link:hover{background:#fff!important;color:var(--ink);border-color:#fff;transform:translateY(-4px);box-shadow:0 12px 28px rgba(7,31,25,.2)}
+  .schedule-panel .action-link:hover>span,.duo-offers .action-link:hover>span{transform:translate(2px,-2px)}
+  .tariff-card:hover{z-index:2;transform:translateY(-10px);box-shadow:0 22px 44px rgba(11,43,35,.18)}
+  .format-grid article:hover{z-index:3;background:#f6faf3;transform:translateY(-9px) scale(1.06);box-shadow:0 22px 48px rgba(23,61,53,.18)}
+}
+
+.schedule-panel .action-link>span,.duo-offers .action-link>span{transition:transform .22s ease}
+
+@media(prefers-reduced-motion:reduce){
+  .tariff-card,.format-grid article,.schedule-panel .action-link,.duo-offers .action-link,.schedule-panel .action-link>span,.duo-offers .action-link>span{transition:none}
+  .tariff-card:hover,.format-grid article:hover,.schedule-panel .action-link:hover,.duo-offers .action-link:hover{transform:none}
+}
