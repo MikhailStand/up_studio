@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { GiftSection, LocationSection, MorningSection, OffersSection, ReviewsSection, SocialLinks, scheduleUrl } from "./studio-updates";
 
-const phone = "+79804219092";
-
 type PriceKind = "basic" | "air" | "kids";
 
 type Direction = {
@@ -58,7 +56,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const faviconUrl = "/favicon-vvys-safari-v5.svg?v=5";
+    const faviconUrl = "/favicon-studio.svg?v=1";
     document.querySelectorAll<HTMLLinkElement>('link[rel*="icon"]').forEach((link) => link.remove());
     const favicon = document.createElement("link");
     favicon.rel = "icon";
@@ -70,17 +68,17 @@ export default function Home() {
 
   return <main>
     <header className="nav-wrap">
-      <a className="brand" href="#top" aria-label="Ввысь — наверх"><span className="brand-mark">В</span><span>студия<br />Ввысь</span></a>
-      <nav aria-label="Основная навигация"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#gifts">Сертификаты</a><a href="#offers">Акции</a><a href="#reviews">Отзывы</a><a href={scheduleUrl} target="_blank" rel="noreferrer">Расписание ↗</a></nav>
-      <div className="nav-actions"><a className="nav-button" href={`tel:${phone}`}>Позвонить <span className="link-arrow" aria-hidden="true">→</span></a><button className={`menu-toggle ${menuOpen ? "is-open" : ""}`} type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} aria-controls="quick-menu" onClick={() => setMenuOpen((current) => !current)}><span /><span /></button></div>
+      <a className="brand" href="#top" aria-label="Студия пилатеса — наверх"><span className="brand-mark">П</span><span>студия<br />пилатеса</span></a>
+      <nav aria-label="Основная навигация"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#gifts">Сертификаты</a><a href="#offers">Акции</a><a href="#reviews">Отзывы</a><a href={scheduleUrl}>Расписание ↗</a></nav>
+      <div className="nav-actions"><a className="nav-button" href="#booking">Позвонить <span className="link-arrow" aria-hidden="true">→</span></a><button className={`menu-toggle ${menuOpen ? "is-open" : ""}`} type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} aria-controls="quick-menu" onClick={() => setMenuOpen((current) => !current)}><span /><span /></button></div>
     </header>
 
     <div className={`quick-menu ${menuOpen ? "is-open" : ""}`} id="quick-menu" aria-hidden={!menuOpen}>
-      <div className="quick-menu-links"><a href={scheduleUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Расписание и запись ↗</a><a href="#schedule" onClick={closeMenu}>Занятия утром, днём и вечером</a><a href="#adults" onClick={closeMenu}>Направления для взрослых</a><a href="#adult-prices" onClick={closeMenu}>Цены для взрослых</a><a href="#kids" onClick={closeMenu}>Направления для детей</a><a href="#kids-prices" onClick={closeMenu}>Цены для детей</a><a href="#family" onClick={closeMenu}>Семейный тариф · акция</a><a href="#gifts" onClick={closeMenu}>Подарочные сертификаты</a><a href="#offers" onClick={closeMenu}>Акции</a><a href="#reviews" onClick={closeMenu}>Отзывы</a><a href="#about" onClick={closeMenu}>О студии</a><a href="#location" onClick={closeMenu}>Адрес и карта</a><a href="#booking" onClick={closeMenu}>Контакты и запись</a></div>
-      <a className="quick-menu-cta" href={`https://wa.me/${phone.slice(1)}`} target="_blank" rel="noreferrer" onClick={closeMenu}>Написать в WhatsApp <span className="link-arrow" aria-hidden="true">→</span></a>
+      <div className="quick-menu-links"><a href={scheduleUrl} onClick={closeMenu}>Расписание и запись ↗</a><a href="#schedule" onClick={closeMenu}>Занятия утром, днём и вечером</a><a href="#adults" onClick={closeMenu}>Направления для взрослых</a><a href="#adult-prices" onClick={closeMenu}>Цены для взрослых</a><a href="#kids" onClick={closeMenu}>Направления для детей</a><a href="#kids-prices" onClick={closeMenu}>Цены для детей</a><a href="#family" onClick={closeMenu}>Семейный тариф · акция</a><a href="#gifts" onClick={closeMenu}>Подарочные сертификаты</a><a href="#offers" onClick={closeMenu}>Акции</a><a href="#reviews" onClick={closeMenu}>Отзывы</a><a href="#about" onClick={closeMenu}>О студии</a><a href="#location" onClick={closeMenu}>Адрес и карта</a><a href="#booking" onClick={closeMenu}>Контакты и запись</a></div>
+      <a className="quick-menu-cta" href="#booking" onClick={closeMenu}>Написать в WhatsApp <span className="link-arrow" aria-hidden="true">→</span></a>
     </div>
 
-    <section className="hero" id="top"><div className="hero-photo" role="img" aria-label="Фитнес-тренировка в светлой студии" /><div className="hero-shade" /><div className="hero-copy"><p className="eyebrow"><span /> Фитнес для всей семьи в Королёве</p><h1>Двигайтесь<br /><em>ввысь</em></h1><div className="hero-bottom"><p>Современная студия фитнеса и воздушной гимнастики. Групповые занятия, профессиональные тренеры и бережный подход к каждому телу.</p><nav className="hero-quick-links" aria-label="Быстрые переходы"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#about">О студии</a><a href="#booking">Записаться</a></nav></div></div><div className="hero-social"><SocialLinks intro /></div><div className="hero-info"><span>Королёв · ул. Академика Легостаева, 8 · секция 9</span><span>Утром, днём и вечером · по расписанию</span></div></section>
+    <section className="hero" id="top"><div className="hero-photo" role="img" aria-label="Фитнес-тренировка в светлой студии" /><div className="hero-shade" /><div className="hero-copy"><p className="eyebrow"><span /> Пилатес для всей семьи</p><h1>Двигайтесь<br /><em>в своём ритме</em></h1><div className="hero-bottom"><p>Современная студия пилатеса и фитнеса. Групповые занятия, профессиональные тренеры и бережный подход к каждому телу.</p><nav className="hero-quick-links" aria-label="Быстрые переходы"><a href="#adults">Взрослым</a><a href="#kids">Детям</a><a href="#about">О студии</a><a href="#booking">Записаться</a></nav></div></div><div className="hero-social"><SocialLinks intro /></div><div className="hero-info"><span>xxxxx</span><span>Утром, днём и вечером · по расписанию</span></div></section>
 
     <section className="directions section" id="adults"><div className="section-heading"><h2>Занятия<br /><em>для взрослых</em></h2><p>От спокойной йоги и пилатеса до функциональных и воздушных тренировок. На карточке указана цена знакомства, а полный прайс расположен сразу после направлений.</p></div><div className="rail-controls"><span>11 направлений · листайте карточки в сторону</span></div><div className="direction-grid">{adultDirections.map((item) => <DirectionCard item={item} key={item.title} />)}</div><div className="tariff-zone"><div className="tariff-intro"><span>Два формата занятий</span><h3>Выберите, где проходит тренировка</h3><p>Базовый тариф действует для занятий на коврике и с обычным инвентарём. Воздушный — только для полотен и гамаков.</p></div><div className="price-panels" id="adult-prices"><TariffCard tariff={tariffs.basic} /><TariffCard tariff={tariffs.air} /></div></div></section>
 
@@ -94,10 +92,10 @@ export default function Home() {
     <section className="studio-story" id="about"><div className="story-photo" role="img" aria-label="Светлый зал студии фитнеса" /><div className="story-copy"><h2><span>Пространство, где</span><em>хочется заниматься</em></h2><p className="story-lead">Большой светлый зал, новый инвентарь и профессиональные инструкторы с подтверждённой квалификацией.</p><p>Без переполненного зала и постороннего шума. Здесь замечают ваш прогресс, поддерживают, когда трудно, и помогают тренироваться безопасно.</p></div></section>
 
     <ReviewsSection />
-    <section className="pause-section"><div className="pause-copy"><p className="eyebrow"><span /> Сильнее с каждым занятием</p><h2>Ваше тело<br />может <em>больше</em></h2></div><a className="action-link pause-action" href={scheduleUrl} target="_blank" rel="noreferrer">Найти своё занятие <span aria-hidden="true">↗</span></a></section>
+    <section className="pause-section"><div className="pause-copy"><p className="eyebrow"><span /> Сильнее с каждым занятием</p><h2>Ваше тело<br />может <em>больше</em></h2></div><a className="action-link pause-action" href={scheduleUrl}>Найти своё занятие <span aria-hidden="true">↗</span></a></section>
 
     <LocationSection />
 
-    <footer className="compact-footer" id="contacts"><a className="brand footer-brand" href="#top"><span className="brand-mark">В</span><span>студия<br />Ввысь</span></a><span>© 2026 Студия «Ввысь» · Фитнес для всей семьи</span><a href="#top">Наверх ↑</a></footer>
+    <footer className="compact-footer" id="contacts"><a className="brand footer-brand" href="#top"><span className="brand-mark">П</span><span>студия<br />пилатеса</span></a><span>© 2026 Студия пилатеса · Демонстрационная версия</span><a href="#top">Наверх ↑</a></footer>
   </main>;
 }

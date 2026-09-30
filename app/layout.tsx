@@ -2,34 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mikhailstand.github.io/up_studio/"),
-  title: "Ввысь — студия фитнеса и воздушной гимнастики в Королёве",
-  description: "Фитнес, йога, пилатес, стретчинг и воздушная гимнастика для детей и взрослых в мини-группах.",
+  metadataBase: new URL("https://example.com/"),
+  title: "Студия пилатеса — занятия для взрослых и детей",
+  description: "Пилатес, фитнес, растяжка и занятия для детей и взрослых в мини-группах.",
   icons: {
-    icon: [
-      { url: "/favicon-vvys-safari-v5.svg", type: "image/svg+xml", sizes: "any" },
-      { url: "/favicon-vvys-v4.ico", type: "image/x-icon", sizes: "any" },
-      { url: "/favicon-vvys-v3.png", type: "image/png", sizes: "512x512" },
-    ],
-    shortcut: "/favicon-vvys-v4.ico",
-    apple: [{ url: "/favicon-vvys-v3.png", sizes: "512x512", type: "image/png" }],
+    icon: [{ url: "/favicon-studio.svg", type: "image/svg+xml", sizes: "any" }],
+    shortcut: "/favicon-studio.svg",
   },
   openGraph: {
-    title: "Ввысь — фитнес для взрослых и детей",
-    description: "Фитнес, йога, пилатес и воздушная гимнастика в Королёве",
+    title: "Студия пилатеса — занятия для взрослых и детей",
+    description: "Пилатес, фитнес и растяжка в камерной студии",
     type: "website",
     locale: "ru_RU",
-    siteName: "Студия «Ввысь»",
-    images: [{ url: "https://mikhailstand.github.io/up_studio/og-vvys-v1.png", width: 1732, height: 908, alt: "Студия Ввысь — фитнес для взрослых и детей в Королёве" }],
+    siteName: "Студия пилатеса",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Ввысь — фитнес для взрослых и детей",
-    description: "Фитнес, йога, пилатес и воздушная гимнастика в Королёве",
-    images: ["https://mikhailstand.github.io/up_studio/og-vvys-v1.png"],
+    card: "summary",
+    title: "Студия пилатеса",
+    description: "Пилатес, фитнес и растяжка в камерной студии",
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru"><head><link rel="mask-icon" href="/favicon-vvys-safari-v5.svg" color="#123f36" /></head><body>{children}</body></html>;
+  return <html lang="ru"><head><link rel="mask-icon" href="/favicon-studio.svg" color="#123f36" /></head><body>{children}</body></html>;
 }

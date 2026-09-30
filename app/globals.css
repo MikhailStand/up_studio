@@ -313,3 +313,19 @@ main h2 em,main h3 em{color:#9e543c!important}
   .tariff-card,.format-grid article,.schedule-panel .action-link,.duo-offers .action-link,.schedule-panel .action-link>span,.duo-offers .action-link>span{transition:none}
   .tariff-card:hover,.format-grid article:hover,.schedule-panel .action-link:hover,.duo-offers .action-link:hover{transform:none}
 }
+
+/* Privacy-safe demo replacements for third-party review and map embeds. */
+.demo-reviews{display:grid;gap:0;padding:20px 26px;background:#fff}
+.demo-reviews article{padding:22px 0;border-bottom:1px solid var(--line)}
+.demo-reviews article:last-child{border-bottom:0}
+.demo-reviews article>div{display:flex;align-items:center;gap:12px}
+.demo-reviews article strong{font-size:17px;font-weight:600}
+.demo-reviews .demo-avatar{width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:linear-gradient(145deg,#d89570,#9ba98b)}
+.demo-reviews .rating-stars{display:block;margin:13px 0 8px;font-size:18px;letter-spacing:2px}
+.demo-reviews p{margin:0;font-size:15px;line-height:1.55;color:#284a42}
+.location-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--ink);background:linear-gradient(135deg,#dbe8d5,#f5f1e9);border:1px solid #ffffff35}
+.location-placeholder>span{width:76px;height:76px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:#fff;font-size:40px;line-height:1}
+.location-placeholder strong{font:500 34px/1 "Cormorant Garamond",serif}
+.location-placeholder small{font-size:14px;color:#557067}
+
+@media(max-width:600px){.demo-reviews{padding:14px 20px}.demo-reviews article{padding:20px 0}.location-placeholder>span{width:64px;height:64px;font-size:34px}}
